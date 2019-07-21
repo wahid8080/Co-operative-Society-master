@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Payment">
+
+    <RelativeLayout
+        android:id="@+id/layout1"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_margin="10dp"
+        android:background="@color/colorAccent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text="P a y m e n t"
+            android:textColor="@color/colorWhite"
+            android:textSize="28dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout1"
+        android:layout_margin="10dp">
+
+        <LinearLayout
+
+            android:id="@+id/menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@color/colorBitterSweetDark"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:weightSum="3">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="2dp"
+                android:layout_weight="1"
+                android:background="@color/colorBitterSweet"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/ic_credit_card_black_24dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Credit Card"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="22dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/colorBitterSweet"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/ic_movie_creation_black_24dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Debit card"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="22dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:layout_weight="1"
+                android:background="@color/colorBitterSweet"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/ic_payment_black_24dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="cash"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="22dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/weAccept"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/menu"
+            android:text="We Accept "
+            android:textSize="28dp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/layout2"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@id/weAccept"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/master" />
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/paypal" />
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/payoneer" />
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/visa" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/inputNumber"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@id/layout2"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/text_view_backgroiund2"
+            android:drawableLeft="@drawable/ic_payment_black_24dp"
+            android:drawableRight="@drawable/ic_movie_creation_black_24dp"
+            android:inputType="numberPassword"
+            android:textSize="24dp" />
+
+        <LinearLayout
+            android:id="@+id/layout3"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@id/inputNumber"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <EditText
+                android:layout_marginRight="5dp"
+                android:background="@drawable/text_view_backgroiund2"
+                android:drawablePadding="10dp"
+                android:hint="19/17"
+                android:drawableLeft="@drawable/ic_credit_card_black_24dp"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_weight="1" />
+
+            <EditText
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/text_view_backgroiund2"
+                android:drawablePadding="10dp"
+                android:drawableLeft="@drawable/ic_lock_black_24dp"
+                android:hint="CCV"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_weight="1" />
+        </LinearLayout>
+        <EditText
+            android:id="@+id/amount"
+            android:hint="Amount"
+            android:textSize="24dp"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@id/layout3"/>
+
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:textSize="24dp"
+            android:text="Remember me"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/amount"
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
+        <Button
+            android:textColor="@color/colorWhite"
+            android:background="@drawable/text_view_background"
+            android:textSize="24dp"
+            android:text="A U T H O R I Z E"
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:layout_below="@id/checkBox"
+            android:layout_alignStart="@+id/checkBox"
+            android:layout_alignLeft="@+id/checkBox"
+            android:layout_alignEnd="@+id/checkBox"
+            android:layout_alignRight="@+id/checkBox"
+            android:layout_marginStart="76dp"
+            android:layout_marginLeft="76dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="66dp"
+            android:layout_marginRight="66dp" />
+
+    </RelativeLayout>
+</RelativeLayout>

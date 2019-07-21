@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EventUpload"
+    android:id="@+id/viewLayoutId"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/linearLayoutForImage1"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/ic_launcher"
+                    android:id="@+id/img1"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp" />
+                <ImageView
+                    android:scaleType="centerCrop"
+                    android:id="@+id/img2"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/linearLayoutForImage2"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:scaleType="centerCrop"
+                    android:id="@+id/img3"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp" />
+                <ImageView
+                    android:scaleType="centerCrop"
+                    android:id="@+id/img4"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_margin="20dp"
+                android:gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/chooseImage"
+                    android:visibility="visible"
+                    android:text="Upload Image"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+
+                    android:background="@drawable/text_view_backgroiund2"
+                    android:hint="Event Name "
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/eventNameId"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:inputType="textPersonName"/>
+
+                <EditText
+                    android:background="@drawable/text_view_backgroiund2"
+                    android:hint="Total Cost for Event"
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/eventCostId"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:inputType="number"/>
+
+                <EditText
+                    android:gravity="top"
+                    android:background="@drawable/text_view_backgroiund2"
+                    android:hint="Event Description"
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/eventDicId"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:inputType="text"/>
+
+                <Button
+                    android:onClick="eventSubmit"
+                    android:layout_marginTop="20dp"
+                    android:text="Submit"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

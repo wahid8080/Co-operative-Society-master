@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "515612340581",
+    "firebase_url": "https://cooperativesociety2.firebaseio.com",
+    "project_id": "cooperativesociety2",
+    "storage_bucket": "cooperativesociety2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:515612340581:android:e566f04c24c19358",
+        "android_client_info": {
+          "package_name": "com.example.cooperativesociety"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "515612340581-oaml010rdv6vestjer3563i5ruj6toea.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.cooperativesociety",
+            "certificate_hash": "f5310cb1f50ddc25a7e28aac0abb272ae086bce1"
+          }
+        },
+        {
+          "client_id": "515612340581-9ahctnpcjbhl3o7a6tlkodj5a857gb8r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.cooperativesociety",
+            "certificate_hash": "b1afcedd48395a2b9c548dd66ee3838acfa55b1b"
+          }
+        },
+        {
+          "client_id": "515612340581-9g0nfbjkq18knrqat95es81gpkt590o8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxeTIYirxOMy8ypnNNXALB-dNCrgGPlgk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "515612340581-9g0nfbjkq18knrqat95es81gpkt590o8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
