@@ -52,7 +52,7 @@
 
 
     <Button
-        android:textColor="#ffffff"
+        android:textColor="#7E3B3B"
         android:background="@drawable/button_background"
         android:id="@+id/buttonConfirmId"
         android:layout_width="match_parent"
@@ -67,7 +67,7 @@
         android:layout_marginTop="20dp"
         android:layout_below="@id/buttonConfirmId"
         android:text="Sing up"
-        android:textColor="#D94453"
+        android:textColor="#FF7E3B3B"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:onClick="gotoSingupActivity"/>

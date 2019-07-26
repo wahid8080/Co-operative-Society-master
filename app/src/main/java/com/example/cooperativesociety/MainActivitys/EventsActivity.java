@@ -41,7 +41,6 @@ public class EventsActivity extends AppCompatActivity {
                 for (DataSnapshot dataSnapshot1:dataSnapshot.getChildren()){
 
                     EventModelClass m = dataSnapshot1.getValue(EventModelClass.class);
-
                     eventModelClassArrayList.add(m);
                 }
 

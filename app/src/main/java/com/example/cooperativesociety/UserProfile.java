@@ -22,8 +22,8 @@ import com.google.firebase.database.ValueEventListener;
 
 public class UserProfile extends AppCompatActivity {
 
-    private TextView mName, mNID, mPhone, mEmail, mDateOfBirth;
-    private ImageView mUser_profile_photo;
+    private TextView mName, mNID, mPhone, mEmail, mAdderss;
+    private ImageView mUser_profile_photo,mUser_CoverPhoto;
     private FirebaseUser user;
 
     @Override
@@ -31,12 +31,13 @@ public class UserProfile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
 
-        mName = findViewById(R.id.user_profile_name);
+        mName = findViewById(R.id.nameForUser);
         mNID = findViewById(R.id.textViewNIDid);
         mPhone = findViewById(R.id.textViewPhoneId);
         mEmail = findViewById(R.id.textViewEmailId);
-        mUser_profile_photo = findViewById(R.id.profileImageViewId);
-        mDateOfBirth = findViewById(R.id.textViewDateOfBirthId);
+        mUser_profile_photo = findViewById(R.id.OwnerProfileImageId);
+        mUser_CoverPhoto = findViewById(R.id.coverPicId);
+        mAdderss = findViewById(R.id.address);
         user = FirebaseAuth.getInstance().getCurrentUser();
         getData();
     }
@@ -54,9 +55,11 @@ public class UserProfile extends AppCompatActivity {
                 mEmail.setText("Email : " + userInformation.getEmail());
                 mPhone.setText("Phone Number : " + userInformation.getPhone());
                 mNID.setText("N ID : " + userInformation.getNid());
-                mDateOfBirth.setText("Date Of Birth : " + userInformation.getDateOfBirth());
+                mAdderss.setText("Address :  : " + userInformation.getDateOfBirth());
                 Bitmap bm = StringToBitMap(userInformation.getImageToString());
                 mUser_profile_photo.setImageBitmap(bm);
+                Bitmap bm2 = StringToBitMap(userInformation.getImageToString());
+                mUser_CoverPhoto.setImageBitmap(bm2);
             }
 
             @Override

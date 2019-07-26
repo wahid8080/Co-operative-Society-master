@@ -21,9 +21,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Donate(View view) {
+
     }
 
     public void Logout(View view) {
+
     }
 
     public void TotalMember(View view) {
