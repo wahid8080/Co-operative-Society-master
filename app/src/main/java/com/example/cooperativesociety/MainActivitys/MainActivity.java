@@ -5,8 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.cooperativesociety.Login;
 import com.example.cooperativesociety.R;
 import com.example.cooperativesociety.UserProfile;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,10 +24,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void Donate(View view) {
 
+        startActivity(new Intent(this,MyDonate.class));
+
     }
 
     public void Logout(View view) {
-
+        FirebaseAuth.getInstance().signOut();
+        startActivity(new Intent(this, Login.class));
     }
 
     public void TotalMember(View view) {

@@ -290,6 +290,13 @@
                     android:background="@color/colorWhite">
                 </View>
 
+                <Button
+                    android:text="event upload"
+                    android:onClick="eventUpload"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+
             </LinearLayout>
         </ScrollView>
     </android.support.v7.widget.CardView>

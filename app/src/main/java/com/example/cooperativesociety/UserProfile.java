@@ -92,4 +92,9 @@ public class UserProfile extends AppCompatActivity {
     public void doYouWantToDonate(View view) {
         startActivity(new Intent(UserProfile.this,DoYouWantToDonate.class));
     }
+
+    public void eventUpload(View view) {
+
+        startActivity(new Intent(this,EventUpload.class));
+    }
 }
