@@ -20,6 +20,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.example.cooperativesociety.Model.EventModelClass;
 import com.google.firebase.auth.FirebaseAuth;
@@ -38,7 +39,7 @@ public class EventUpload extends AppCompatActivity {
     private ImageView mImg1,mImg2,mImg3,mImg4;
     private Bitmap bitmap1,bitmap2,bitmap3,bitmap4;
 
-    private EditText mName,mCost,mDesc;
+    private EditText mName,mCost,mDesc,mLocation;
     private Button upload;
     private LinearLayout mLayout1,mLayout2;
     private static final int CODE_MULTIPLE_IMG_GALLERY = 2;
@@ -60,6 +61,7 @@ public class EventUpload extends AppCompatActivity {
         mName = findViewById(R.id.eventNameId);
         mCost = findViewById(R.id.eventCostId);
         mDesc = findViewById(R.id.eventDicId);
+        mLocation = findViewById(R.id.eventLocationId);
         mLayout1 = findViewById(R.id.linearLayoutForImage1);
         mLayout2 = findViewById(R.id.linearLayoutForImage2);
 
@@ -123,10 +125,13 @@ public class EventUpload extends AppCompatActivity {
         String name = mName.getText().toString().trim();
         String cost = mCost.getText().toString().trim();
         String desc = mDesc.getText().toString().trim();
+        String locat = mLocation.getText().toString().trim();
 
-        databaseReference = FirebaseDatabase.getInstance().getReference("Event").child("event1");
-        EventModelClass modelClass = new EventModelClass(m1,m2,m3,m4,name,cost,desc);
+        databaseReference = FirebaseDatabase.getInstance().getReference("Event").push();
+        EventModelClass modelClass = new EventModelClass(m1,m2,m3,m4,name,cost,desc,locat);
         databaseReference.setValue(modelClass);
+        Toast.makeText(EventUpload.this,"Event Submit Successful",Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(EventUpload.this,UserProfile.class));
     }
 
     public String imageToString(Bitmap bitmap) {

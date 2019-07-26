@@ -92,6 +92,15 @@
                     android:inputType="number"/>
 
                 <EditText
+                    android:background="@drawable/text_view_backgroiund2"
+                    android:hint="Location"
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/eventLocationId"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:inputType="text"/>
+
+                <EditText
                     android:gravity="top"
                     android:background="@drawable/text_view_backgroiund2"
                     android:hint="Event Description"
@@ -102,6 +111,8 @@
                     android:inputType="text"/>
 
                 <Button
+                    android:background="@drawable/button_background"
+                    android:layout_marginBottom="10dp"
                     android:onClick="eventSubmit"
                     android:layout_marginTop="20dp"
                     android:text="Submit"

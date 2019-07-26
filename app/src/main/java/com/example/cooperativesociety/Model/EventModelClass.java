@@ -1,12 +1,12 @@
 package com.example.cooperativesociety.Model;
 
 public class EventModelClass {
-    private String image1,image2,image3,image4,eventName,eventCost,eventDescription;
+    private String image1,image2,image3,image4,eventName,eventCost,eventDescription,location;
 
     public EventModelClass() {
     }
 
-    public EventModelClass(String image1, String image2, String image3, String image4, String eventName, String eventCost, String eventDescription) {
+    public EventModelClass(String image1, String image2, String image3, String image4, String eventName, String eventCost, String eventDescription,String location) {
         this.image1 = image1;
         this.image2 = image2;
         this.image3 = image3;
@@ -14,6 +14,7 @@ public class EventModelClass {
         this.eventName = eventName;
         this.eventCost = eventCost;
         this.eventDescription = eventDescription;
+        this.location = location;
     }
 
     public String getImage1() {
@@ -44,6 +45,10 @@ public class EventModelClass {
         return eventDescription;
     }
 
+    public String getLocation() {
+        return location;
+    }
+
     public void setImage1(String image1) {
         this.image1 = image1;
     }
@@ -70,5 +75,9 @@ public class EventModelClass {
 
     public void setEventDescription(String eventDescription) {
         this.eventDescription = eventDescription;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 }
