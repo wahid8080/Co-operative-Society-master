@@ -19,7 +19,7 @@
             android:layout_height="match_parent">
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:onClick="GalleryFunction"
+
                 android:id="@+id/viewProfilePicMemberList"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
