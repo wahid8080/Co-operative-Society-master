@@ -44,8 +44,8 @@ public class MyAdepterOfEvent extends RecyclerView.Adapter<MyAdepterOfEvent.MyVi
     public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, final int i) {
 
         final EventModelClass modelClass = eventModelClassArrayList.get(i);
-        myViewHolder.name.setText(modelClass.getEventName());
-        myViewHolder.location.setText(modelClass.getEventCost());
+        myViewHolder.name.setText("Event Name: "+modelClass.getEventName());
+        myViewHolder.location.setText("Location: "+modelClass.getEventCost());
         bitmap = StringToBitMap(modelClass.getImage1());
         myViewHolder.mImage.setImageBitmap(bitmap);
 

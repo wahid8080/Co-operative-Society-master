@@ -19,125 +19,180 @@
             android:orientation="vertical">
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="120dp"
                 android:orientation="horizontal">
-                <ImageView
-                    android:src="@drawable/logo2"
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:onClick="alaminProfile"
+                    android:layout_gravity="center"
+                    android:id="@+id/uploadProfilePicture2"
                     android:layout_width="100dp"
-                    android:layout_height="100dp" />
+                    android:layout_height="100dp"
+                    android:src="@drawable/alamin"
+                    app:civ_border_color="@color/colorAquaDark"
+                    app:civ_border_width="2dp" />
 
                 <LinearLayout
+                    android:layout_gravity="center_vertical"
                     android:layout_margin="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
                     <TextView
-                        android:textSize="16dp"
+                        android:id="@+id/alaminName"
+                        android:layout_marginBottom="2dp"
+                        android:textSize="24dp"
                         android:text="Name : Al-Amin"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 
-                    <TextView
-                        android:textSize="16dp"
-                        android:text="ID : 162-15-8146"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
 
                     <TextView
+                        android:id="@+id/alaminPhone"
                         android:textSize="16dp"
                         android:text="Phone : 01928505807"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 
-                    <TextView
-                        android:textSize="16dp"
-                        android:text="Email : hridoyalamin505@gmail.com"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
                 </LinearLayout>
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="120dp"
                 android:orientation="horizontal">
-                <ImageView
-                    android:src="@drawable/logo2"
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:onClick="sujonProfile"
+                    android:layout_gravity="center"
+                    android:id="@+id/uploadProfilePicture3"
                     android:layout_width="100dp"
-                    android:layout_height="100dp" />
+                    android:layout_height="100dp"
+                    android:src="@drawable/sujon"
+                    app:civ_border_color="@color/colorAquaDark"
+                    app:civ_border_width="2dp" />
 
                 <LinearLayout
+                    android:layout_gravity="center_vertical"
                     android:layout_margin="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
                     <TextView
-                        android:textSize="16dp"
+                        android:id="@+id/sujonName"
+                        android:layout_marginBottom="2dp"
+                        android:textSize="24dp"
                         android:text="Name : Shahadat Hosain Sujan"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 
-                    <TextView
-                        android:textSize="16dp"
-                        android:text="ID : 162-15-8114"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
 
                     <TextView
+                        android:id="@+id/sujonPhone"
                         android:textSize="16dp"
                         android:text="Phone : 01830287233"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 
-                    <TextView
-                        android:textSize="16dp"
-                        android:text="Email : sujanchowdhury119@gmail.com"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
                 </LinearLayout>
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="120dp"
                 android:orientation="horizontal">
-                <ImageView
-                    android:src="@drawable/logo2"
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:onClick="samimProfile"
+                    android:layout_gravity="center"
+                    android:id="@+id/uploadProfilePicture"
                     android:layout_width="100dp"
-                    android:layout_height="100dp" />
+                    android:layout_height="100dp"
+                    android:src="@drawable/samim"
+                    app:civ_border_color="@color/colorAquaDark"
+                    app:civ_border_width="2dp" />
 
                 <LinearLayout
+                    android:layout_gravity="center_vertical"
                     android:layout_margin="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
                     <TextView
-                        android:textSize="16dp"
+                        android:id="@+id/samimName"
+                        android:layout_marginBottom="20dp"
+                        android:textSize="24dp"
                         android:text="Name : Shamim Ahmed"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 
                     <TextView
-                        android:textSize="16dp"
-                        android:text="ID : 162_15_8120"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-
-                    <TextView
+                        android:id="@+id/saminPhone"
                         android:textSize="16dp"
                         android:text="Phone : 01983567568"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
-
-                    <TextView
-                        android:textSize="16dp"
-                        android:text="Email : Shamimrahman511@gmail.com"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
                 </LinearLayout>
 
+            </LinearLayout>
+            <LinearLayout
+                android:visibility="gone"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/alaminEmail"
+                    android:textSize="14dp"
+                    android:text="Email : hridoyalamin505@gmail.com"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/alaminId"
+                    android:textSize="14dp"
+                    android:text="ID : 162 15 8146"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/alaminAbout"
+                    android:textSize="14dp"
+                    android:text="About : The criteria for being a person are designed to capture those attributes which are the subject"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/sujonEmail"
+                    android:textSize="14dp"
+                    android:text="Email : sujanchowdhury119@gmail.com"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/sujonId"
+                    android:textSize="14dp"
+                    android:text="ID : 162 15 8114"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/sujonAbout"
+                    android:textSize="14dp"
+                    android:text="About : The criteria for being a person are designed to capture those attributes which are the subject"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/samimEmail"
+                    android:textSize="14dp"
+                    android:text="Email : Shamimrahman511@gmail.com"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/saminId"
+                    android:textSize="14dp"
+                    android:text="ID : 162 15 8120"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/samimAbout"
+                    android:textSize="14dp"
+                    android:text="About : The criteria for being a person are designed to capture those attributes which are the subject"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

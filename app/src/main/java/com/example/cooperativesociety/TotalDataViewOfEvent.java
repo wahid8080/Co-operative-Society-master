@@ -45,10 +45,10 @@ public class TotalDataViewOfEvent extends AppCompatActivity {
         bitmap3 = StringToBitMap(img31);
         bitmap4 = StringToBitMap(img41);
 
-        name.setText(name1);
-        location.setText(location1);
-        description.setText(description1);
-        cost.setText(cost1);
+        name.setText("Event Name: "+name1);
+        location.setText("Location: "+location1);
+        description.setText("Description: "+description1);
+        cost.setText("Total Cost: "+cost1);
 
 
         img1.setImageBitmap(bitmap1);

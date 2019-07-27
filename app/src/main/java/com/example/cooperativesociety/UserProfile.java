@@ -97,4 +97,10 @@ public class UserProfile extends AppCompatActivity {
 
         startActivity(new Intent(this,EventUpload.class));
     }
+
+    public void logout(View view) {
+
+        FirebaseAuth.getInstance().signOut();
+        startActivity(new Intent(this, Login.class));
+    }
 }
