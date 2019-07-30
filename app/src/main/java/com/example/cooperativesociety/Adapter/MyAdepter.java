@@ -4,12 +4,14 @@ import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.annotation.NonNull;
+import android.support.design.widget.Snackbar;
 import android.support.v7.widget.RecyclerView;
 import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.cooperativesociety.Model.MembersModelClass;
@@ -36,7 +38,7 @@ public class MyAdepter extends RecyclerView.Adapter<MyAdepter.MyViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int i) {
+    public void onBindViewHolder(@NonNull MyViewHolder holder, final int i) {
 
         MembersModelClass members = membersArrayList.get(i);
 
@@ -45,6 +47,15 @@ public class MyAdepter extends RecyclerView.Adapter<MyAdepter.MyViewHolder> {
         holder.mName.setText(members.getUsername());
         holder.mPhone.setText(members.getPhone());
         holder.mImage.setImageBitmap(StringToBitMap(members.getImageToString()));
+        holder.mImage2.setImageBitmap(StringToBitMap(members.getImageToString()));
+        holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Snackbar.make(v,"Number Of Member : " +i, Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
+
 
     }
 
@@ -57,7 +68,8 @@ public class MyAdepter extends RecyclerView.Adapter<MyAdepter.MyViewHolder> {
 
     class MyViewHolder extends RecyclerView.ViewHolder {
 
-        ImageView mImage;
+        RelativeLayout relativeLayout;
+        ImageView mImage,mImage2;
         TextView mEmail, mPhone, mName;
 
         public MyViewHolder(@NonNull View itemView) {
@@ -67,6 +79,8 @@ public class MyAdepter extends RecyclerView.Adapter<MyAdepter.MyViewHolder> {
             mEmail = itemView.findViewById(R.id.viewEmailMemberList);
             mPhone = itemView.findViewById(R.id.viewPhoneMemberList);
             mName = itemView.findViewById(R.id.viewNameMemberList);
+            mImage2 = itemView.findViewById(R.id.viewCoverPicMemberList);
+            relativeLayout = itemView.findViewById(R.id.userListClick);
         }
     }
 

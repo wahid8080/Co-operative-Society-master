@@ -3,6 +3,7 @@ package com.example.cooperativesociety;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Patterns;
@@ -49,7 +50,7 @@ public class Registration extends AppCompatActivity {
             progressDialog.setMessage("Try to Sing up");
             progressDialog.setTitle("Processing...");
             progressDialog.show();
-            singup(email, pass);
+            singup(email, pass,view);
         } else {
             validate();
         }
@@ -83,7 +84,7 @@ public class Registration extends AppCompatActivity {
         return valid;
     }
 
-    void singup(final String singupEmail, String singupPass) {
+    void singup(final String singupEmail, String singupPass, final View view) {
         mAuth.createUserWithEmailAndPassword(singupEmail, singupPass)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -93,13 +94,15 @@ public class Registration extends AppCompatActivity {
                             progressDialog.dismiss();
                             Intent intent = new Intent(Registration.this, UploadYourInformation.class);
                             startActivity(intent);
-                            Toast.makeText(Registration.this, "Registration Successful.", Toast.LENGTH_SHORT).show();
+                            Snackbar.make(view,"Registration Successful", Snackbar.LENGTH_LONG)
+                                    .setAction("Action", null).show();
                             finish();
 
                         } else {
                             // If sign in fails, display a message to the user.
                             progressDialog.cancel();
-                            Toast.makeText(Registration.this, "Registration failed.", Toast.LENGTH_SHORT).show();
+                            Snackbar.make(view,"Registration Failed", Snackbar.LENGTH_LONG)
+                                    .setAction("Action", null).show();
                         }
                     }
                 });

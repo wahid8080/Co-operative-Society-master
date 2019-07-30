@@ -91,10 +91,6 @@ public class UserProfile extends AppCompatActivity {
         startActivity(new Intent(UserProfile.this, DashBord.class));
     }
 
-    public void eventUpload(View view) {
-
-        startActivity(new Intent(this,EventUpload.class));
-    }
 
     public void logout(View view) {
 
@@ -104,5 +100,11 @@ public class UserProfile extends AppCompatActivity {
 
     public void editProfile(View view) {
         startActivity(new Intent(this,UploadYourInformation.class));
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        finish();
     }
 }

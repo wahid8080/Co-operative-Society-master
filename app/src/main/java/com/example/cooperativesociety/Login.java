@@ -1,8 +1,10 @@
 package com.example.cooperativesociety;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -55,12 +57,13 @@ public class Login extends AppCompatActivity {
             {
                 Intent intent = new Intent(Login.this,DashBord.class);
                 startActivity(intent);
-                Toast.makeText(Login.this,"Admin Login Successful",Toast.LENGTH_SHORT).show();
+                Snackbar.make(view,"Admin Login Successful", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
                 finish();
 
             }else
             {
-                login(email,pass);
+                login(email,pass,view);
 
             }
         } else {
@@ -91,7 +94,7 @@ public class Login extends AppCompatActivity {
         return valid;
     }
 
-    private void login(final String email, String password) {
+    private void login(final String email, String password, final View view) {
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -100,14 +103,15 @@ public class Login extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             progressDialog.dismiss();
                             Intent intent = new Intent(Login.this,DashBord.class);
-                            intent.putExtra("user","userLogin");
                             startActivity(intent);
-                            Toast.makeText(Login.this,"User Login Successful",Toast.LENGTH_SHORT).show();
+                            Snackbar.make(view,"User Login Successful", Snackbar.LENGTH_LONG)
+                                    .setAction("Action", null).show();
                             finish();
                         } else {
                             // If sign in fails, display a message to the user.
                             progressDialog.cancel();
-                            Toast.makeText(Login.this, "check your email or password.",Toast.LENGTH_SHORT).show();
+                            Snackbar.make(view,"Check your Email Or Password", Snackbar.LENGTH_LONG)
+                                    .setAction("Action", null).show();
 
                         }
 

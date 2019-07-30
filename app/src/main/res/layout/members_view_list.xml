@@ -1,84 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="80dp"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:layout_marginBottom="16dp">
-
-    <LinearLayout
-        android:weightSum="7"
-        android:orientation="horizontal"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:id="@+id/userListClick"
+        android:layout_marginBottom="10dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <LinearLayout
-            android:gravity="center"
-            android:layout_weight="5"
+        android:layout_height="200dp">
+        <ImageView
+            android:id="@+id/viewCoverPicMemberList"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/inside_room"/>
 
-            <de.hdodenhof.circleimageview.CircleImageView
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentRight="true"
+            android:id="@+id/viewProfilePicMemberList"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/wahid"
+            app:civ_border_color="@color/colorAquaDark"
+            app:civ_border_width="2dp" />
+        <TextView
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:text="Name : "
+            android:textSize="24dp"
+            android:textColor="@color/colorWhite"
+            android:layout_above="@id/viewEmailMemberList"
+            android:id="@+id/viewNameMemberList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:text="Email : "
+            android:textSize="24dp"
+            android:textColor="@color/colorWhite"
+            android:layout_above="@id/viewPhoneMemberList"
+            android:id="@+id/viewEmailMemberList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
-                android:id="@+id/viewProfilePicMemberList"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:src="@drawable/profile_empty_icon"
-                app:civ_border_color="#D1D1D1"
-                app:civ_border_width="2dp" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Phone : "
+            android:textSize="24dp"
+            android:textColor="@color/colorWhite"
+            android:layout_marginLeft="20dp"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/viewPhoneMemberList" />
 
-            <LinearLayout
-                android:weightSum="3"
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:fontFamily="serif"
-                    android:id="@+id/viewNameMemberList"
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="10dp"
-                    android:text="Name "
-                    android:textSize="20dp" />
-
-                <TextView
-                    android:fontFamily="serif"
-                    android:id="@+id/viewEmailMemberList"
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="10dp"
-                    android:text="Email"
-                    android:textSize="14dp" />
-
-                <TextView
-                    android:fontFamily="serif"
-                    android:id="@+id/viewPhoneMemberList"
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="10dp"
-                    android:text="Total Donate"
-                    android:textSize="14dp" />
-
-                <View
-                    android:background="#919191"
-                    android:layout_width="wrap_content"
-                    android:layout_height="2dp">
-                </View>
-            </LinearLayout>
-        </LinearLayout>
-
-    </LinearLayout>
-
-</LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

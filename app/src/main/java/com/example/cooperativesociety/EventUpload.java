@@ -127,7 +127,7 @@ public class EventUpload extends AppCompatActivity {
         EventModelClass modelClass = new EventModelClass(m1, m2, m3, m4, name, cost, desc, locat);
         databaseReference.setValue(modelClass);
         Toast.makeText(EventUpload.this, "Event Submit Successful", Toast.LENGTH_SHORT).show();
-        startActivity(new Intent(EventUpload.this, UserProfile.class));
+        startActivity(new Intent(EventUpload.this, DashBord.class));
 
 
     }

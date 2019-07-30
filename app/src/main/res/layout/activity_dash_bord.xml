@@ -15,34 +15,72 @@
        <RelativeLayout
            android:id="@+id/coverAndProfile"
            android:layout_width="match_parent"
-           android:layout_height="280dp">
+           android:layout_height="320dp">
+
            <ImageView
+               android:id="@+id/dashbordImage"
+               android:visibility="gone"
+               android:src="@drawable/inside_room"
+               android:scaleType="centerCrop"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent" />
+           <ImageView
+               android:visibility="visible"
+               android:id="@+id/coverPicIdDashBord"
                android:layout_width="match_parent"
                android:layout_height="200dp"
                android:src="@drawable/inside_room"
                android:scaleType="centerCrop"/>
 
            <de.hdodenhof.circleimageview.CircleImageView
+               android:visibility="visible"
                android:layout_alignParentBottom="true"
                android:layout_marginLeft="20dp"
-               android:layout_marginBottom="30dp"
-               android:id="@+id/OwnerProfileImageId"
+               android:layout_marginBottom="70dp"
+               android:id="@+id/profilePicIdDashbord"
                android:layout_width="100dp"
                android:layout_height="100dp"
                android:src="@drawable/wahid"
                app:civ_border_color="@color/colorAquaDark"
                app:civ_border_width="2dp" />
 
-           <Button
+           <TextView
                android:onClick="logoutDashbord"
                android:id="@+id/logout"
                android:layout_alignParentRight="true"
                android:text="Logout"
-               android:layout_margin="15dp"
+               android:textSize="20dp"
+               android:layout_margin="20dp"
                android:background="#00FFFFFF"
                android:layout_alignParentBottom="true"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content" />
+
+           <TextView
+               android:id="@+id/Profile"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_alignEnd="@+id/logout"
+               android:layout_alignRight="@+id/logout"
+               android:layout_alignParentBottom="true"
+               android:layout_marginRight="76dp"
+               android:layout_marginBottom="20dp"
+               android:background="#00FFFFFF"
+               android:onClick="profileDashbord"
+               android:text="Profile"
+               android:textSize="20dp" />
+
+           <TextView
+               android:visibility="visible"
+               android:id="@+id/userName"
+               android:layout_width="wrap_content"
+               android:text="User Name"
+               android:textSize="22dp"
+               android:layout_height="wrap_content"
+               android:layout_alignParentBottom="true"
+               android:layout_marginLeft="130dp"
+               android:textStyle="bold"
+               android:layout_marginBottom="80dp" />
        </RelativeLayout>
 
         <RelativeLayout
