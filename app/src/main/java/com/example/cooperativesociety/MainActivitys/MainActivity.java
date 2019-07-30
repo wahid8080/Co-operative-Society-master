@@ -1,37 +1,35 @@
 package com.example.cooperativesociety.MainActivitys;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.LinearLayout;
 
 import com.example.cooperativesociety.Login;
+import com.example.cooperativesociety.Model.UserInformation;
 import com.example.cooperativesociety.R;
 import com.example.cooperativesociety.UserProfile;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    }
-
-    public void YourProfile(View view) {
-        startActivity(new Intent(MainActivity.this, UserProfile.class));
-    }
-
-    public void Donate(View view) {
-
-        startActivity(new Intent(this,MyDonate.class));
 
     }
 
-    public void Logout(View view) {
-        FirebaseAuth.getInstance().signOut();
-        startActivity(new Intent(this, Login.class));
-    }
 
     public void TotalMember(View view) {
         startActivity(new Intent(MainActivity.this, MemberActivity.class));

@@ -71,7 +71,7 @@
             android:textSize="18dp" />
 
         <EditText
-            android:id="@+id/donateNow"
+            android:id="@+id/donateNow1"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:layout_marginLeft="20dp"

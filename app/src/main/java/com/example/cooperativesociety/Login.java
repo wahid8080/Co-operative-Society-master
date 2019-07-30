@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
@@ -49,7 +50,19 @@ public class Login extends AppCompatActivity {
             progressDialog.setMessage("Try to Login");
             progressDialog.setTitle("Processing...");
             progressDialog.show();
-            login(email,pass);
+
+            if (email.equals("alamin@admin.com")&&pass.equals("admin")||email.equals("samim@admin.com")&&pass.equals("admin")||email.equals("sujan@admin.com")&&pass.equals("admin"))
+            {
+                Intent intent = new Intent(Login.this,DashBord.class);
+                startActivity(intent);
+                Toast.makeText(Login.this,"Admin Login Successful",Toast.LENGTH_SHORT).show();
+                finish();
+
+            }else
+            {
+                login(email,pass);
+
+            }
         } else {
             validate();
         }
@@ -86,9 +99,10 @@ public class Login extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             progressDialog.dismiss();
-                            Intent intent = new Intent(Login.this, MainActivity.class);
+                            Intent intent = new Intent(Login.this,DashBord.class);
+                            intent.putExtra("user","userLogin");
                             startActivity(intent);
-                            Toast.makeText(Login.this,"Login Successful",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Login.this,"User Login Successful",Toast.LENGTH_SHORT).show();
                             finish();
                         } else {
                             // If sign in fails, display a message to the user.
@@ -113,7 +127,7 @@ public class Login extends AppCompatActivity {
     private void updateUI(FirebaseUser currentUser) {
         if (currentUser!=null)
         {
-            startActivity(new Intent(Login.this,MainActivity.class));
+            startActivity(new Intent(Login.this,DashBord.class));
         }
     }
 

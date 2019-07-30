@@ -29,7 +29,7 @@ public class UploadYourInformation extends AppCompatActivity {
     private int PIC_IMAGE_REQUEST = 1;
     private Bitmap bitmap;
 
-    private DatabaseReference databaseReference;
+    private DatabaseReference databaseReference,databaseReference1;
     private FirebaseUser user;
     private ProgressDialog progressDialog;
 
@@ -65,21 +65,27 @@ public class UploadYourInformation extends AppCompatActivity {
         progressDialog.setTitle("Processing...");
         progressDialog.show();
         uploadInformation();
-        Intent intent = new Intent(UploadYourInformation.this, MainActivity.class);
+        Intent intent = new Intent(UploadYourInformation.this, DashBord.class);
         startActivity(intent);
         finish();
     }
 
     void uploadInformation() {
+
         String email = user.getEmail();
         String image = imageToString(bitmap);
         String userName = mUserNmae.getText().toString().trim();
         String phone = mPhone.getText().toString().trim();
         String NID = mNID.getText().toString().trim();
         String dateOfBirth = mDateOfBirth.getText().toString().trim();
+        String user1 = "user";
+        int balance = 0;
         databaseReference = FirebaseDatabase.getInstance().getReference("User").child(user.getUid());
-        UserInformation userInformation = new UserInformation(email, NID, phone, userName, image, dateOfBirth);
+        databaseReference1 = FirebaseDatabase.getInstance().getReference("User").child(user.getUid()).child("Balance").push();
+        UserInformation userInformation = new UserInformation(email, NID, phone, userName, image, dateOfBirth,user1);
+        UserInformation userInformation1 = new UserInformation(balance);
         databaseReference.setValue(userInformation);
+        databaseReference1.setValue(userInformation1);
         progressDialog.dismiss();
     }
 

@@ -45,28 +45,34 @@ public class UserProfile extends AppCompatActivity {
 
     void getData() {
 
-        DatabaseReference myRef = FirebaseDatabase.getInstance().getReference("User").child(user.getUid());
-        myRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
+        try
+        {
+            DatabaseReference myRef = FirebaseDatabase.getInstance().getReference("User").child(user.getUid());
+            myRef.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
 
-                UserInformation userInformation = dataSnapshot.getValue(UserInformation.class);
-                mName.setText("User Name : " + userInformation.getUsername());
-                mEmail.setText("Email : " + userInformation.getEmail());
-                mPhone.setText("Phone Number : " + userInformation.getPhone());
-                mNID.setText("N ID : " + userInformation.getNid());
-                mAdderss.setText("Address :  : " + userInformation.getDateOfBirth());
-                Bitmap bm = StringToBitMap(userInformation.getImageToString());
-                mUser_profile_photo.setImageBitmap(bm);
-                Bitmap bm2 = StringToBitMap(userInformation.getImageToString());
-                mUser_CoverPhoto.setImageBitmap(bm2);
-            }
+                    UserInformation userInformation = dataSnapshot.getValue(UserInformation.class);
+                    mName.setText("User Name : " + userInformation.getUsername());
+                    mEmail.setText("Email : " + userInformation.getEmail());
+                    mPhone.setText("Phone Number : " + userInformation.getPhone());
+                    mNID.setText("N ID : " + userInformation.getNid());
+                    mAdderss.setText("Address :  : " + userInformation.getDateOfBirth());
+                    Bitmap bm = StringToBitMap(userInformation.getImageToString());
+                    mUser_profile_photo.setImageBitmap(bm);
+                    Bitmap bm2 = StringToBitMap(userInformation.getImageToString());
+                    mUser_CoverPhoto.setImageBitmap(bm2);
+                }
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
 
-            }
-        });
+                }
+            });
+        } catch (Exception e)
+        {
+            startActivity(new Intent(this,UploadYourInformation.class));
+        }
     }
 
     public Bitmap StringToBitMap(String encodedString) {
@@ -82,15 +88,7 @@ public class UserProfile extends AppCompatActivity {
 
 
     public void goToHome(View view) {
-        startActivity(new Intent(UserProfile.this, MainActivity.class));
-    }
-
-    public void yourAmount(View view) {
-        startActivity(new Intent(UserProfile.this,YourBalance.class));
-    }
-
-    public void doYouWantToDonate(View view) {
-        startActivity(new Intent(UserProfile.this,DoYouWantToDonate.class));
+        startActivity(new Intent(UserProfile.this, DashBord.class));
     }
 
     public void eventUpload(View view) {
@@ -102,5 +100,9 @@ public class UserProfile extends AppCompatActivity {
 
         FirebaseAuth.getInstance().signOut();
         startActivity(new Intent(this, Login.class));
+    }
+
+    public void editProfile(View view) {
+        startActivity(new Intent(this,UploadYourInformation.class));
     }
 }

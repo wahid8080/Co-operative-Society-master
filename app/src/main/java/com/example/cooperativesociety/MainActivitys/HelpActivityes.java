@@ -12,4 +12,11 @@ public class HelpActivityes extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help_activityes);
     }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        finish();
+    }
 }

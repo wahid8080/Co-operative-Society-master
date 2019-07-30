@@ -44,4 +44,12 @@ public class AdminProfile extends AppCompatActivity {
             mImage.setImageResource(img);
         }
     }
+
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        finish();
+    }
 }

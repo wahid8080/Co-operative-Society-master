@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DashBord">
+
+
+    <RelativeLayout
+        android:background="#E7E7E7"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+       <RelativeLayout
+           android:id="@+id/coverAndProfile"
+           android:layout_width="match_parent"
+           android:layout_height="280dp">
+           <ImageView
+               android:layout_width="match_parent"
+               android:layout_height="200dp"
+               android:src="@drawable/inside_room"
+               android:scaleType="centerCrop"/>
+
+           <de.hdodenhof.circleimageview.CircleImageView
+               android:layout_alignParentBottom="true"
+               android:layout_marginLeft="20dp"
+               android:layout_marginBottom="30dp"
+               android:id="@+id/OwnerProfileImageId"
+               android:layout_width="100dp"
+               android:layout_height="100dp"
+               android:src="@drawable/wahid"
+               app:civ_border_color="@color/colorAquaDark"
+               app:civ_border_width="2dp" />
+
+           <Button
+               android:onClick="logoutDashbord"
+               android:id="@+id/logout"
+               android:layout_alignParentRight="true"
+               android:text="Logout"
+               android:layout_margin="15dp"
+               android:background="#00FFFFFF"
+               android:layout_alignParentBottom="true"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content" />
+       </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/menu2"
+            android:layout_below="@id/coverAndProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/tabileEvent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:onClick="asaBank"
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorMint"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:src="@drawable/asa_bank"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="15dp"
+                        android:background="@color/colorMintDark"
+                        android:padding="8dp"
+                        android:text="Asa Bank"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:onClick="grameenBank"
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorAqua"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/grameen" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="15dp"
+                        android:background="@color/colorAquaDark"
+                        android:padding="8dp"
+                        android:text="Grameen"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_below="@id/menu2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:onClick="brackbank"
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorMint"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:src="@drawable/brack_bank"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="15dp"
+                        android:background="@color/colorMintDark"
+                        android:padding="8dp"
+                        android:text="Brac Bonk"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:onClick="krishiBank"
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorAqua"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/krisi_bank" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="15dp"
+                        android:background="@color/colorAquaDark"
+                        android:padding="8dp"
+                        android:text="Krishi Bank"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

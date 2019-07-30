@@ -19,4 +19,11 @@ public class DonateActivity extends AppCompatActivity {
     public void goToPayment(View view) {
         startActivity(new Intent(DonateActivity.this, Payment.class));
     }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        finish();
+    }
 }

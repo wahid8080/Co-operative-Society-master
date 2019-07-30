@@ -1,303 +1,321 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#424242"
+    android:background="#797878"
     tools:context=".UserProfile">
 
-
-    <ImageView
-        android:id="@+id/coverPicId"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/blank_cover" />
-
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/OwnerProfileImageId"
-        android:layout_width="130dp"
-        android:layout_height="130dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:src="@drawable/blank_profile"
-        app:civ_border_color="@color/colorAquaDark"
-        app:civ_border_width="2dp"
-        app:layout_constraintBottom_toBottomOf="@+id/coverPicId"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.05"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/coverPicId"
-        app:layout_constraintVertical_bias="0.514" />
-
-    <TextView
-        android:id="@+id/nameForUser"
-        android:layout_width="0dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:gravity="center_vertical"
-        android:paddingLeft="10dp"
-        android:text="Md Wahidujjaman"
-        android:textColor="@color/colorWhite"
-        android:textSize="24dp"
-        app:fontFamily="serif"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/OwnerProfileImageId"
-        app:layout_constraintTop_toBottomOf="@+id/coverPicId" />
-
-    <android.support.v7.widget.CardView
-        android:id="@+id/cardView3"
-        android:layout_width="0dp"
-        android:layout_height="430dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="45dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:backgroundTint="#666666"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameForUser">
-
-        <ScrollView
+        android:layout_height="match_parent">
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <LinearLayout
+            <RelativeLayout
+                android:id="@+id/layout1"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_height="320dp">
 
-                <LinearLayout
+
+                <ImageView
+                    android:id="@+id/coverPicId"
                     android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:layout_marginTop="10dp"
-                    android:orientation="horizontal"
-                    android:weightSum="4">
+                    android:layout_height="200dp"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/inside_room" />
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="3"
-                        android:gravity="center">
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/OwnerProfileImageId"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginBottom="70dp"
+                    android:src="@drawable/wahid"
+                    app:civ_border_color="@color/colorAquaDark"
+                    app:civ_border_width="2dp" />
 
-                        <ImageView
-                            android:layout_width="35dp"
-                            android:layout_height="35dp"
-                            android:layout_gravity="center"
-                            android:src="@drawable/ic_home_black_24dp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/address"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_vertical"
-                            android:text="Mohammad pur"
-                            android:textColor="@color/colorWhite"
-                            android:textSize="18dp"
-                            app:fontFamily="serif" />
-
-
-                    </LinearLayout>
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:layout_marginLeft="90dp"
-                    android:layout_marginTop="5dp"
-                    android:background="@color/colorWhite"></View>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="10dp"
-                    android:orientation="horizontal"
-                    android:weightSum="4">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="3"
-                        android:gravity="center">
-
-                        <ImageView
-                            android:layout_width="35dp"
-                            android:layout_height="35dp"
-                            android:src="@drawable/ic_local_phone_black_24dp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center_vertical"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/textViewPhoneId"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_vertical"
-                            android:text="01747731092"
-                            android:textColor="@color/colorWhite"
-                            android:textSize="18dp"
-                            app:fontFamily="serif" />
-
-                    </LinearLayout>
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:layout_marginLeft="90dp"
-                    android:layout_marginTop="5dp"
-                    android:background="@color/colorWhite"></View>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="10dp"
-                    android:orientation="horizontal"
-                    android:weightSum="4">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="3"
-                        android:gravity="center">
-
-                        <ImageView
-                            android:layout_width="35dp"
-                            android:layout_height="35dp"
-                            android:src="@drawable/ic_email_black_24dp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center_vertical"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/textViewEmailId"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="wahid.nil.8080@gmail.com"
-                            android:textColor="@color/colorWhite"
-                            android:textSize="18dp"
-                            app:fontFamily="serif" />
-
-                    </LinearLayout>
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:layout_marginLeft="90dp"
-                    android:layout_marginTop="5dp"
-                    android:background="@color/colorWhite"></View>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="10dp"
-                    android:orientation="horizontal"
-                    android:weightSum="4">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="3"
-                        android:gravity="center">
-
-                        <ImageView
-                            android:layout_width="35dp"
-                            android:layout_height="35dp"
-                            android:src="@drawable/ic_local_phone_black_24dp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center_vertical"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/textViewNIDid"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="N ID"
-                            android:textColor="@color/colorWhite"
-                            android:textSize="18dp"
-                            app:fontFamily="serif" />
-
-                    </LinearLayout>
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:layout_marginLeft="90dp"
-                    android:layout_marginTop="5dp"
-                    android:background="@color/colorWhite"></View>
+                <TextView
+                    android:layout_above="@id/button2"
+                    android:id="@+id/nameForUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:text="Md Wahidujjaman"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="24dp"
+                    app:fontFamily="serif" />
 
                 <Button
-                    android:layout_width="match_parent"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:id="@+id/button2"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick="eventUpload"
-                    android:text="event upload" />
+                    android:layout_margin="10dp"
+                    android:background="#00FFFFFF"
+                    android:drawableRight="@drawable/ic_arrow_forward_black_24dp"
+                    android:onClick="logout"
+                    android:text="Logout"
+                    android:textColor="#ffff" />
 
-            </LinearLayout>
-        </ScrollView>
-    </android.support.v7.widget.CardView>
+                <Button
+                    android:onClick="goToHome"
+                    android:text="Dash bord"
+                    android:textColor="@color/colorWhite"
+                    android:layout_margin="10dp"
+                    android:background="#03FFFFFF"
+                    android:layout_alignParentBottom="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+            <android.support.v7.widget.CardView
+                android:layout_margin="10dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp"
+                android:backgroundTint="#5E5E5E"
+                android:id="@+id/cardView3"
+                android:layout_below="@+id/layout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-    <Button
-        android:onClick="logout"
-        android:drawableRight="@drawable/ic_arrow_forward_black_24dp"
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="Logout"
-        android:textColor="#ffff"
-        android:background="#00FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/cardView3"
-        app:layout_constraintEnd_toEndOf="@+id/nameForUser"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/nameForUser"
-        app:layout_constraintTop_toBottomOf="@+id/nameForUser"
-        app:layout_constraintVertical_bias="0.0" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:weightSum="4">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="3"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_home_black_24dp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/address"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:text="Mohammad pur"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="18dp"
+                                app:fontFamily="serif" />
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginLeft="90dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/colorWhite"></View>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:weightSum="4">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="3"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:src="@drawable/ic_local_phone_black_24dp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textViewPhoneId"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:text="01747731092"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="18dp"
+                                app:fontFamily="serif" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginLeft="90dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/colorWhite">
+
+                    </View>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:weightSum="4">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="3"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:src="@drawable/ic_email_black_24dp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textViewEmailId"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="wahid.nil.8080@gmail.com"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="18dp"
+                                app:fontFamily="serif" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginLeft="90dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/colorWhite">
+
+                    </View>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:weightSum="4">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="3"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:src="@drawable/ic_local_phone_black_24dp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textViewNIDid"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="N ID"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="18dp"
+                                app:fontFamily="serif" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginLeft="90dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/colorWhite">
+
+                    </View>
+
+                    <Button
+                        android:textColor="@color/colorWhite"
+                        android:background="@drawable/text_view_backgroiund2"
+                        android:layout_marginRight="50dp"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:onClick="eventUpload"
+                        android:text="event upload" />
+
+
+                    <TextView
+                        android:onClick="editProfile"
+                        android:layout_marginBottom="30dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_alignParentRight="true"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="18dp"
+                        android:text="Edit Info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+
+
+            </android.support.v7.widget.CardView>
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+
+</RelativeLayout>

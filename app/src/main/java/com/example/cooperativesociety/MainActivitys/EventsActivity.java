@@ -46,6 +46,7 @@ public class EventsActivity extends AppCompatActivity {
 
                 myAdepterOfEvent = new MyAdepterOfEvent(EventsActivity.this,eventModelClassArrayList);
                 recyclerView.setAdapter(myAdepterOfEvent);
+
             }
 
             @Override
@@ -54,5 +55,14 @@ public class EventsActivity extends AppCompatActivity {
             }
         });
 
+
+
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        finish();
     }
 }

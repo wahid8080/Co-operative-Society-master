@@ -2,15 +2,23 @@ package com.example.cooperativesociety.Model;
 
 public class UserInformation {
 
-    private String email,nid,phone,username,imageToString,dateOfBirth;
+    private String email,nid,phone,username,imageToString,dateOfBirth,user;
 
-    public UserInformation(String email, String nid, String phone, String username, String imageToString, String dateOfBirth) {
+    private int balance;
+
+    public UserInformation(String email, String nid, String phone, String username, String imageToString, String dateOfBirth,String user) {
         this.email = email;
         this.nid = nid;
         this.phone = phone;
         this.username = username;
         this.imageToString = imageToString;
         this.dateOfBirth = dateOfBirth;
+        this.user = user;
+    }
+
+    public UserInformation(int balance) {
+        this.balance = balance;
+
     }
 
     public UserInformation() {
@@ -37,13 +45,22 @@ public class UserInformation {
         return imageToString;
     }
 
+    public int getBalance() {
+        return balance;
+    }
+
     public String getDateOfBirth() {
         return dateOfBirth;
+    }
+
+    public String getUser() {
+        return user;
     }
 
     public void setEmail(String email) {
         this.email = email;
     }
+
 
     public void setNid(String nid) {
         this.nid = nid;
@@ -63,5 +80,13 @@ public class UserInformation {
 
     public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
+    public void setBalance(int balance) {
+        this.balance = balance;
     }
 }

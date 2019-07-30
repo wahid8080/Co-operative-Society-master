@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    tools:context=".MainActivitys.MainActivity">
+    tools:context=".UserMainActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -42,6 +42,92 @@
                     app:fontFamily="casual" />
             </RelativeLayout>
 
+            <LinearLayout
+
+                android:padding="10dp"
+                android:weightSum="3"
+                android:background="@color/colorAccent"
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp"
+                android:id="@+id/menu"
+                android:layout_below="@id/dashbordId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:background="@color/colorAccentDark"
+                    android:layout_marginRight="2dp"
+                    android:onClick="YourProfile"
+                    android:gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:padding="5dp"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/profile"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp" />
+
+                    <TextView
+                        android:textSize="18dp"
+                        android:textColor="@color/colorWhite"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Profile"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:background="@color/colorAccentDark"
+                    android:onClick="Donate"
+                    android:gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:padding="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/donate"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp" />
+
+                    <TextView
+                        android:textSize="18dp"
+                        android:textColor="@color/colorWhite"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Your Donate"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginLeft="2dp"
+                    android:background="@color/colorAccentDark"
+                    android:onClick="Logout"
+                    android:gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:padding="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/logout"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp" />
+
+                    <TextView
+                        android:textSize="18dp"
+                        android:textColor="@color/colorWhite"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Log out"/>
+                </LinearLayout>
+
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_marginRight="10dp"
@@ -49,7 +135,7 @@
                 android:id="@+id/tabileEvent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/dashbordId"
+                android:layout_below="@id/menu"
                 android:orientation="horizontal"
                 android:weightSum="2">
 
@@ -199,7 +285,7 @@
 
                 <LinearLayout
                     android:onClick="Fant"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:layout_margin="2dp"
                     android:layout_weight="1"
@@ -221,38 +307,6 @@
                         android:background="@color/colorPrimaryDark"
                         android:padding="8dp"
                         android:text="Fund"
-                        android:textAlignment="center"
-                        android:textColor="@color/colorWhite"
-                        android:textSize="18sp" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/linerLayoutForAdmin"
-                    android:visibility="visible"
-                    android:onClick="Admin"
-                    android:layout_width="0dp"
-                    android:layout_height="150dp"
-                    android:layout_margin="2dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorPinkRose"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="20dp"
-                        android:src="@drawable/admin"
-                        android:tint="@color/colorWhite" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="15dp"
-                        android:background="@color/colorPinkRoseDark"
-                        android:padding="8dp"
-                        android:text="Admin"
                         android:textAlignment="center"
                         android:textColor="@color/colorWhite"
                         android:textSize="18sp" />

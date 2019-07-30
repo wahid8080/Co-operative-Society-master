@@ -88,4 +88,11 @@ public class AdminActivity extends AppCompatActivity {
         Toast.makeText(AdminActivity.this,R.string.alaminId,Toast.LENGTH_SHORT).show();
 
     }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        finish();
+    }
 }

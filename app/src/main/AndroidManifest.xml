@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AdminProfile"></activity>
+        <activity android:name=".UserMainActivity"></activity>
+        <activity android:name=".DashBord" />
+        <activity android:name=".AdminProfile" />
         <activity android:name=".TotalDataViewOfEvent" />
         <activity android:name=".EventUpload" />
         <activity android:name=".Payment" />

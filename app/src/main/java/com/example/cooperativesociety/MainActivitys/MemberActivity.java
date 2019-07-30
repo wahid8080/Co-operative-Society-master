@@ -59,4 +59,11 @@ public class MemberActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        finish();
+    }
 }
