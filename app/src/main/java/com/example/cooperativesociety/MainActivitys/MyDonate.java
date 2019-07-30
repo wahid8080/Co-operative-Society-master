@@ -27,7 +27,7 @@ public class MyDonate extends AppCompatActivity {
     TextView totalDonate;
     EditText donateNow;
 
-    DatabaseReference databaseReference,databaseReference1;
+    DatabaseReference databaseReference,databaseReference1,databaseReference3;
     FirebaseUser user;
 
     int total = 0;
@@ -55,7 +55,7 @@ public class MyDonate extends AppCompatActivity {
                 {
                     UserInformation userInformation = dataSnapshot1.getValue(UserInformation.class);
                      total = total + userInformation.getBalance();
-                    totalDonate.setText("Total Amount : "+String.valueOf(total));
+                    totalDonate.setText("Your Donate : "+String.valueOf(total));
                 }
             }
 
@@ -69,10 +69,13 @@ public class MyDonate extends AppCompatActivity {
     }
 
     public void confirm(View view) {
+        databaseReference3 = FirebaseDatabase.getInstance().getReference("Fund").child("Balance").push();
         databaseReference1 = FirebaseDatabase.getInstance().getReference("User").child(user.getUid()).child("Balance").push();
         String balance = donateNow.getText().toString().trim();
         int finalValue = Integer.valueOf(balance);
+        UserInformation userInformation3 = new UserInformation(finalValue);
         UserInformation userInformation1 = new UserInformation(finalValue);
+        databaseReference3.setValue(userInformation3);
         databaseReference1.setValue(userInformation1);
     }
 }

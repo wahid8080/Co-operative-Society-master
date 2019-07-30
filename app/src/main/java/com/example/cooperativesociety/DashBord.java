@@ -38,6 +38,7 @@ public class DashBord extends AppCompatActivity {
         userProfile = findViewById(R.id.profilePicIdDashbord);
         userCover = findViewById(R.id.coverPicIdDashBord);
         dashbordImg = findViewById(R.id.dashbordImage);
+        TextView profile = findViewById(R.id.Profile);
 
         try {
             user = FirebaseAuth.getInstance().getCurrentUser();
@@ -63,6 +64,7 @@ public class DashBord extends AppCompatActivity {
             userCover.setVisibility(View.GONE);
             userProfile.setVisibility(View.GONE);
             userName.setVisibility(View.GONE);
+            profile.setVisibility(View.GONE);
             dashbordImg.setVisibility(View.VISIBLE);
         }
 
@@ -203,5 +205,10 @@ public class DashBord extends AppCompatActivity {
 
     public void profileDashbord(View view) {
         startActivity(new Intent(DashBord.this,UserProfile.class));
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
     }
 }

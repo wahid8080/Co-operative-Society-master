@@ -94,8 +94,7 @@ public class Registration extends AppCompatActivity {
                             progressDialog.dismiss();
                             Intent intent = new Intent(Registration.this, UploadYourInformation.class);
                             startActivity(intent);
-                            Snackbar.make(view,"Registration Successful", Snackbar.LENGTH_LONG)
-                                    .setAction("Action", null).show();
+                            Toast.makeText(Registration.this,"Registration Successful",Toast.LENGTH_SHORT).show();
                             finish();
 
                         } else {

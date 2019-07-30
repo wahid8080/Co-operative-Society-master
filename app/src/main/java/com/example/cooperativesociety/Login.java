@@ -35,9 +35,6 @@ public class Login extends AppCompatActivity {
         mEmail = findViewById(R.id.userNameId_log);
         mPass = findViewById(R.id.passId_log);
         mAuth = FirebaseAuth.getInstance();
-
-
-
     }
 
     public void confirmInput(View view) {
@@ -57,8 +54,7 @@ public class Login extends AppCompatActivity {
             {
                 Intent intent = new Intent(Login.this,DashBord.class);
                 startActivity(intent);
-                Snackbar.make(view,"Admin Login Successful", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Toast.makeText(this,"Admin Login Successful",Toast.LENGTH_SHORT).show();
                 finish();
 
             }else
@@ -104,8 +100,7 @@ public class Login extends AppCompatActivity {
                             progressDialog.dismiss();
                             Intent intent = new Intent(Login.this,DashBord.class);
                             startActivity(intent);
-                            Snackbar.make(view,"User Login Successful", Snackbar.LENGTH_LONG)
-                                    .setAction("Action", null).show();
+                            Toast.makeText(Login.this,"User Login Successful",Toast.LENGTH_SHORT).show();
                             finish();
                         } else {
                             // If sign in fails, display a message to the user.
