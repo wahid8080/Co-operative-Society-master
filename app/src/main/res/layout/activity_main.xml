@@ -31,13 +31,14 @@
                     android:src="@drawable/logo2"/>
 
                 <TextView
+                    android:layout_marginTop="40dp"
                     android:layout_below="@id/dashbordLogo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:text="Co-operative Society"
+                    android:text="Co-operative Organization"
                     android:textColor="#FCFCFC"
-                    android:textSize="30dp"
+                    android:textSize="24dp"
                     android:textStyle="bold"
                     app:fontFamily="casual" />
             </RelativeLayout>
@@ -169,7 +170,7 @@
                         android:layout_height="70dp"
                         android:layout_gravity="center"
                         android:layout_marginTop="20dp"
-                        android:src="@drawable/donate"
+                        android:src="@drawable/ic_credit_card_black_24dp"
                         android:tint="@color/colorWhite" />
 
                     <TextView
@@ -178,7 +179,7 @@
                         android:layout_marginTop="15dp"
                         android:background="@color/colorFlowerDark"
                         android:padding="8dp"
-                        android:text="Donate"
+                        android:text="Payment"
                         android:textAlignment="center"
                         android:textColor="@color/colorWhite"
                         android:textSize="18sp" />
