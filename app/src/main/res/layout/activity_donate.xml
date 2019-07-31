@@ -1,30 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivitys.DonateActivity">
+    tools:context=".DonateActivity">
 
-    <Button
-        android:onClick="goToPayment"
-        android:id="@+id/button3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/button_background2"
-        android:text="P A Y M E N T "
-        android:textColor="#B15A5A"
-        android:textSize="22dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.897" />
-</android.support.constraint.ConstraintLayout>
+   <RelativeLayout
+       android:gravity="center"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+       <android.support.v7.widget.CardView
+           android:id="@+id/bkashCardView"
+           android:layout_width="200dp"
+           android:layout_height="150dp"
+           app:cardCornerRadius="10dp"
+           app:cardElevation="10dp"
+           android:backgroundTint="#E6E6E6">
+
+           <ImageView
+               android:onClick="bkashPayment"
+               android:layout_gravity="center"
+               android:layout_width="130dp"
+               android:layout_height="130dp"
+               android:src="@drawable/bkash"/>
+       </android.support.v7.widget.CardView>
+
+       <android.support.v7.widget.CardView
+           android:layout_marginTop="20dp"
+           android:layout_below="@id/bkashCardView"
+           android:id="@+id/CashCardView"
+           android:layout_width="200dp"
+           android:layout_height="150dp"
+           app:cardCornerRadius="10dp"
+           app:cardElevation="10dp"
+           android:backgroundTint="#E6E6E6">
+
+           <ImageView
+               android:onClick="cashPayment"
+               android:layout_gravity="center"
+               android:layout_width="130dp"
+               android:layout_height="130dp"
+               android:src="@drawable/cash_payment"/>
+       </android.support.v7.widget.CardView>
+
+       <android.support.v7.widget.CardView
+           android:layout_marginTop="20dp"
+           android:layout_below="@id/CashCardView"
+           android:id="@+id/CreditCardView"
+           android:layout_width="200dp"
+           android:layout_height="150dp"
+           app:cardCornerRadius="10dp"
+           app:cardElevation="10dp"
+           android:backgroundTint="#E6E6E6">
+
+           <ImageView
+               android:onClick="creditCardPayment"
+               android:layout_width="130dp"
+               android:layout_height="130dp"
+               android:layout_gravity="center"
+               android:src="@drawable/credit_card_payment" />
+       </android.support.v7.widget.CardView>
+   </RelativeLayout>
+
+</RelativeLayout>

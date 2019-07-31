@@ -1,4 +1,4 @@
-package com.example.cooperativesociety.MainActivitys;
+package com.example.cooperativesociety;
 
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -8,7 +8,6 @@ import android.support.v7.widget.RecyclerView;
 
 import com.example.cooperativesociety.Adapter.MyAdepter;
 import com.example.cooperativesociety.Model.MembersModelClass;
-import com.example.cooperativesociety.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;

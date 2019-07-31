@@ -12,7 +12,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
-import com.example.cooperativesociety.MainActivitys.MainActivity;
 import com.example.cooperativesociety.Model.UserInformation;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;

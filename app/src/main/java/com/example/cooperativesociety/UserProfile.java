@@ -10,7 +10,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.cooperativesociety.MainActivitys.MainActivity;
 import com.example.cooperativesociety.Model.UserInformation;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -53,9 +52,9 @@ public class UserProfile extends AppCompatActivity {
                 public void onDataChange(DataSnapshot dataSnapshot) {
 
                     UserInformation userInformation = dataSnapshot.getValue(UserInformation.class);
-                    mName.setText("User Name : " + userInformation.getUsername());
+                    mName.setText("Name : " + userInformation.getUsername());
                     mEmail.setText("Email : " + userInformation.getEmail());
-                    mPhone.setText("Phone Number : " + userInformation.getPhone());
+                    mPhone.setText("Cell Phone: " + userInformation.getPhone());
                     mNID.setText("N ID : " + userInformation.getNid());
                     mAdderss.setText("Address :  : " + userInformation.getDateOfBirth());
                     Bitmap bm = StringToBitMap(userInformation.getImageToString());

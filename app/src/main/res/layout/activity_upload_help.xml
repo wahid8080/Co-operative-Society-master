@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UploadHelp">
+
+    <RelativeLayout
+        android:layout_margin="30dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:textStyle="bold"
+            android:textSize="30dp"
+            android:gravity="center_horizontal"
+            android:text="Do you want to help?"
+            android:layout_marginBottom="50dp"
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:layout_below="@id/textView"
+            android:paddingLeft="20dp"
+            android:background="@drawable/button_background"
+            android:layout_marginBottom="40dp"
+            android:hint="Help Cost"
+            android:id="@+id/submitHelpCost"
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
+        <EditText
+            android:paddingLeft="20dp"
+            android:background="@drawable/button_background"
+            android:gravity="top"
+            android:layout_below="@id/submitHelpCost"
+            android:hint="Help Description"
+            android:id="@+id/submitHelpDesc"
+            android:layout_width="match_parent"
+            android:layout_height="100dp" />
+
+        <Button
+            android:onClick="submitHelp"
+            android:background="@drawable/text_view_background"
+            android:textColor="@color/colorWhite"
+            android:text="Submit"
+            android:layout_marginTop="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/submitHelpDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

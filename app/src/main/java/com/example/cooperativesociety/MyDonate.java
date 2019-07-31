@@ -1,4 +1,4 @@
-package com.example.cooperativesociety.MainActivitys;
+package com.example.cooperativesociety;
 
 import android.content.Intent;
 import android.os.Build;

@@ -23,7 +23,7 @@
             android:id="@+id/viewProfilePicMemberList"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:src="@drawable/wahid"
+            android:src="@drawable/blank_profile"
             app:civ_border_color="@color/colorAquaDark"
             app:civ_border_width="2dp" />
         <TextView

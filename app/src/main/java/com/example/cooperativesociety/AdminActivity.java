@@ -1,4 +1,4 @@
-package com.example.cooperativesociety.MainActivitys;
+package com.example.cooperativesociety;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,9 +7,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.example.cooperativesociety.AdminProfile;
-import com.example.cooperativesociety.R;
 
 public class AdminActivity extends AppCompatActivity {
 

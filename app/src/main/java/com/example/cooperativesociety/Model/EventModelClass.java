@@ -1,12 +1,13 @@
 package com.example.cooperativesociety.Model;
 
 public class EventModelClass {
-    private String image1,image2,image3,image4,eventName,eventCost,eventDescription,location;
+    private String image1,image2,image3,image4,eventName,eventDescription,location;
+    private int eventCost,totalEventCost;
 
     public EventModelClass() {
     }
 
-    public EventModelClass(String image1, String image2, String image3, String image4, String eventName, String eventCost, String eventDescription,String location) {
+    public EventModelClass(String image1, String image2, String image3, String image4, String eventName, int eventCost, String eventDescription,String location) {
         this.image1 = image1;
         this.image2 = image2;
         this.image3 = image3;
@@ -15,6 +16,10 @@ public class EventModelClass {
         this.eventCost = eventCost;
         this.eventDescription = eventDescription;
         this.location = location;
+    }
+
+    public EventModelClass(int totalEventCost) {
+        this.totalEventCost = totalEventCost;
     }
 
     public String getImage1() {
@@ -37,7 +42,7 @@ public class EventModelClass {
         return eventName;
     }
 
-    public String getEventCost() {
+    public int getEventCost() {
         return eventCost;
     }
 
@@ -47,6 +52,14 @@ public class EventModelClass {
 
     public String getLocation() {
         return location;
+    }
+
+    public int getTotalEventCost() {
+        return totalEventCost;
+    }
+
+    public void setTotalEventCost(int totalEventCost) {
+        this.totalEventCost = totalEventCost;
     }
 
     public void setImage1(String image1) {
@@ -69,7 +82,7 @@ public class EventModelClass {
         this.eventName = eventName;
     }
 
-    public void setEventCost(String eventCost) {
+    public void setEventCost(int eventCost) {
         this.eventCost = eventCost;
     }
 

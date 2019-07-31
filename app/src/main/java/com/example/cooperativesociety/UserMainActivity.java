@@ -5,14 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.cooperativesociety.MainActivitys.AdminActivity;
-import com.example.cooperativesociety.MainActivitys.DonateActivity;
-import com.example.cooperativesociety.MainActivitys.EventsActivity;
-import com.example.cooperativesociety.MainActivitys.FundActivityes;
-import com.example.cooperativesociety.MainActivitys.HelpActivityes;
-import com.example.cooperativesociety.MainActivitys.MainActivity;
-import com.example.cooperativesociety.MainActivitys.MemberActivity;
-import com.example.cooperativesociety.MainActivitys.MyDonate;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class UserMainActivity extends AppCompatActivity {

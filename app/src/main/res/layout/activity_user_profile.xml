@@ -34,14 +34,14 @@
                     android:layout_alignParentBottom="true"
                     android:layout_marginLeft="20dp"
                     android:layout_marginBottom="70dp"
-                    android:src="@drawable/wahid"
+                    android:src="@drawable/blank_profile"
                     app:civ_border_color="@color/colorAquaDark"
                     app:civ_border_width="2dp" />
 
                 <TextView
                     android:layout_above="@id/button2"
                     android:id="@+id/nameForUser"
-                    android:layout_width="wrap_content"
+                    android:layout_width="260dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="10dp"
