@@ -11,7 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UploadHelp"></activity>
+        <activity android:name=".AnnualActivityes"></activity>
+        <activity android:name=".Vision" />
+        <activity android:name=".Mission" />
+        <activity android:name=".RegistrationForBank" />
+        <activity android:name=".LoginForBank" />
+        <activity android:name=".Login" />
+        <activity android:name=".UploadHelp" />
         <activity android:name=".BkashPayment" />
         <activity android:name=".UserMainActivity" />
         <activity android:name=".DashBord" />
@@ -32,7 +38,7 @@
         <activity android:name=".UploadYourInformation" />
         <activity android:name=".Registration" />
         <activity android:name=".MyDonate" />
-        <activity android:name=".Login">
+        <activity android:name=".WelcomeScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

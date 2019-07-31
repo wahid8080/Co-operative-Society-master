@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Base64;
@@ -26,9 +27,9 @@ import java.io.IOException;
 public class UploadYourInformation extends AppCompatActivity {
 
     private int PIC_IMAGE_REQUEST = 1;
-    private Bitmap bitmap;
+    private Bitmap bitmap = null;
 
-    private DatabaseReference databaseReference,databaseReference1;
+    private DatabaseReference databaseReference, databaseReference1;
     private FirebaseUser user;
     private ProgressDialog progressDialog;
 
@@ -63,29 +64,32 @@ public class UploadYourInformation extends AppCompatActivity {
         progressDialog.setMessage("Profile Update");
         progressDialog.setTitle("Processing...");
         progressDialog.show();
-        uploadInformation();
-        Intent intent = new Intent(UploadYourInformation.this, DashBord.class);
-        startActivity(intent);
+        uploadInformation(view);
         finish();
     }
 
-    void uploadInformation() {
+    void uploadInformation(View view) {
 
-        String email = user.getEmail();
-        String image = imageToString(bitmap);
-        String userName = mUserNmae.getText().toString().trim();
-        String phone = mPhone.getText().toString().trim();
-        String NID = mNID.getText().toString().trim();
-        String dateOfBirth = mDateOfBirth.getText().toString().trim();
-        String user1 = "user";
-        int balance = 0;
-        databaseReference = FirebaseDatabase.getInstance().getReference("User").child(user.getUid());
-        databaseReference1 = FirebaseDatabase.getInstance().getReference("User").child(user.getUid()).child("Balance").push();
-        UserInformation userInformation = new UserInformation(email, NID, phone, userName, image, dateOfBirth,user1);
-        UserInformation userInformation1 = new UserInformation(balance);
-        databaseReference.setValue(userInformation);
-        databaseReference1.setValue(userInformation1);
-        progressDialog.dismiss();
+            String email = user.getEmail();
+            String image = imageToString(bitmap);
+            String userName = mUserNmae.getText().toString().trim();
+            String phone = mPhone.getText().toString().trim();
+            String NID = mNID.getText().toString().trim();
+            String dateOfBirth = mDateOfBirth.getText().toString().trim();
+            String user1 = "user";
+            int balance = 0;
+            databaseReference = FirebaseDatabase.getInstance().getReference("User").child(user.getUid());
+            databaseReference1 = FirebaseDatabase.getInstance().getReference("User").child(user.getUid()).child("Balance").push();
+            UserInformation userInformation = new UserInformation(email, NID, phone, userName, image, dateOfBirth, user1);
+            UserInformation userInformation1 = new UserInformation(balance);
+            databaseReference.setValue(userInformation);
+            databaseReference1.setValue(userInformation1);
+            progressDialog.dismiss();
+            Intent intent = new Intent(UploadYourInformation.this, DashBord.class);
+            startActivity(intent);
+
+        Snackbar.make(view, "Select Profile Image", Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show();
     }
 
     public String imageToString(Bitmap bitmap) {
@@ -106,6 +110,7 @@ public class UploadYourInformation extends AppCompatActivity {
             try {
                 bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), path);
                 mImage.setImageBitmap(bitmap);
+
             } catch (IOException e) {
                 e.printStackTrace();
             }

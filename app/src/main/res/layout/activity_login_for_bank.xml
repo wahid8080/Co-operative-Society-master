@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    tools:context=".Login"
-    android:background="#FFFFFF">
+    tools:context=".LoginForBank">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -23,31 +21,34 @@
                 android:visibility="visible">
 
 
-                <ImageView
+                <TextView
+                    android:textColor="@color/colorWhite"
+                    android:textSize="30dp"
+                    android:text="Grameen"
+                    android:gravity="center"
                     android:background="#FD4D8E"
                     android:layout_centerHorizontal="true"
-                    android:id="@+id/imageViewId"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_marginBottom="60dp"
-                    android:src="@drawable/logo2" />
+                    android:id="@+id/textForBank"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginBottom="60dp"/>
 
 
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/textInputId1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/imageViewId"
+                    android:layout_below="@id/textForBank"
                     android:layout_marginBottom="10dp"
                     app:errorEnabled="true">
 
                     <EditText
-                        android:id="@+id/userNameId_log"
+                        android:id="@+id/userNameIdForBank"
                         style="@style/Widget.MaterialComponents.TextInputEditText.FilledBox.Dense"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="20dp"
-                        android:hint="E m a i l"
+                        android:hint="U s e r  N a m e"
                         android:inputType="textEmailAddress" />
                 </android.support.design.widget.TextInputLayout>
 
@@ -62,7 +63,7 @@
 
                     <EditText
 
-                        android:id="@+id/passId_log"
+                        android:id="@+id/passIdForBank"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="20dp"
@@ -102,4 +103,5 @@
             </RelativeLayout>
         </RelativeLayout>
     </ScrollView>
+
 </RelativeLayout>

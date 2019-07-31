@@ -7,37 +7,51 @@ import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
-
+    String key;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        key = getIntent().getStringExtra("bank");
+
     }
 
 
     public void TotalMember(View view) {
-        startActivity(new Intent(MainActivity.this, MemberActivity.class));
+        Intent intent = new Intent(MainActivity.this, MemberActivity.class);
+        intent.putExtra("bank",key);
+        startActivity(intent);
     }
 
     public void TotalEvent(View view) {
-        startActivity(new Intent(MainActivity.this, EventsActivity.class));
+        Intent intent = new Intent(MainActivity.this, EventsActivity.class);
+        intent.putExtra("bank",key);
+        startActivity(intent);
     }
 
     public void Help(View view) {
-        startActivity(new Intent(MainActivity.this, HelpActivityes.class));
+        Intent intent = new Intent(MainActivity.this, HelpActivityes.class);
+        intent.putExtra("bank",key);
+        startActivity(intent);
     }
 
     public void DonateActivitys(View view) {
-        startActivity(new Intent(MainActivity.this, DonateActivity.class));
+        Intent intent = new Intent(MainActivity.this, DonateActivity.class);
+        intent.putExtra("bank",key);
+        startActivity(intent);
     }
 
     public void Fant(View view) {
-        startActivity(new Intent(MainActivity.this, FundActivityes.class));
+        Intent intent = new Intent(MainActivity.this, FundActivityes.class);
+        intent.putExtra("bank",key);
+        startActivity(intent);
     }
 
     public void Admin(View view) {
-        startActivity(new Intent(MainActivity.this, AdminActivity.class));
+        Intent intent = new Intent(MainActivity.this, AdminActivity.class);
+        intent.putExtra("bank",key);
+        startActivity(intent);
     }
 }

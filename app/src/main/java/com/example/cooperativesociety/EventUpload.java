@@ -40,12 +40,16 @@ public class EventUpload extends AppCompatActivity {
 
     private FirebaseUser user;
 
+    String key;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_upload);
         upload = findViewById(R.id.chooseImage);
+
+        key = getIntent().getStringExtra("bank");
 
         mImg1 = findViewById(R.id.img1);
         mImg2 = findViewById(R.id.img2);
@@ -125,7 +129,7 @@ public class EventUpload extends AppCompatActivity {
 
         int cast1 = Integer.valueOf(cost);
 
-        databaseReference = FirebaseDatabase.getInstance().getReference("Event").push();
+        databaseReference = FirebaseDatabase.getInstance().getReference("Event").child(key).push();
         EventModelClass modelClass = new EventModelClass(m1, m2, m3, m4, name, cast1, desc, locat);
         databaseReference.setValue(modelClass);
         Toast.makeText(EventUpload.this, "Event Submit Successful", Toast.LENGTH_SHORT).show();

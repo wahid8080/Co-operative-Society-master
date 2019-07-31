@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
+import com.example.cooperativesociety.Adapter.ExampleDailog;
 import com.example.cooperativesociety.Model.UserInformation;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -94,7 +95,8 @@ public class DashBord extends AppCompatActivity {
                     UserInformation userInformation = dataSnapshot.getValue(UserInformation.class);
                     if (userInformation.getUser().equals("user"))
                     {
-                        Intent intent = new Intent(DashBord.this, UserMainActivity.class);
+                        Intent intent = new Intent(DashBord.this, LoginForBank.class);
+                        intent.putExtra("bank","Krishi");
                         startActivity(intent);
                     }
                 }
@@ -107,9 +109,12 @@ public class DashBord extends AppCompatActivity {
         } catch (Exception e)
         {
             Intent intent = new Intent(DashBord.this, MainActivity.class);
+            intent.putExtra("bank","Krishi");
             startActivity(intent);
         }
     }
+
+
 
     public void brackbank(View view) {
 
@@ -123,7 +128,8 @@ public class DashBord extends AppCompatActivity {
                     UserInformation userInformation = dataSnapshot.getValue(UserInformation.class);
                     if (userInformation.getUser().equals("user"))
                     {
-                        Intent intent = new Intent(DashBord.this, UserMainActivity.class);
+                        Intent intent = new Intent(DashBord.this, LoginForBank.class);
+                        intent.putExtra("bank","brak");
                         startActivity(intent);
                     }
                 }
@@ -136,6 +142,7 @@ public class DashBord extends AppCompatActivity {
         } catch (Exception e)
         {
             Intent intent = new Intent(DashBord.this, MainActivity.class);
+            intent.putExtra("bank","brak");
             startActivity(intent);
         }
     }
@@ -152,7 +159,8 @@ public class DashBord extends AppCompatActivity {
                     UserInformation userInformation = dataSnapshot.getValue(UserInformation.class);
                     if (userInformation.getUser().equals("user"))
                     {
-                        Intent intent = new Intent(DashBord.this, UserMainActivity.class);
+                        Intent intent = new Intent(DashBord.this, LoginForBank.class);
+                        intent.putExtra("bank","asa");
                         startActivity(intent);
                     }
                 }
@@ -165,6 +173,7 @@ public class DashBord extends AppCompatActivity {
         } catch (Exception e)
         {
             Intent intent = new Intent(DashBord.this, MainActivity.class);
+            intent.putExtra("bank","asa");
             startActivity(intent);
         }
     }
@@ -180,7 +189,8 @@ public class DashBord extends AppCompatActivity {
                     UserInformation userInformation = dataSnapshot.getValue(UserInformation.class);
                     if (userInformation.getUser().equals("user"))
                     {
-                        Intent intent = new Intent(DashBord.this, UserMainActivity.class);
+                        Intent intent = new Intent(DashBord.this, LoginForBank.class);
+                        intent.putExtra("bank","grameen");
                         startActivity(intent);
                     }
                 }
@@ -193,6 +203,7 @@ public class DashBord extends AppCompatActivity {
         } catch (Exception e)
         {
             Intent intent = new Intent(DashBord.this, MainActivity.class);
+            intent.putExtra("bank","grameen");
             startActivity(intent);
         }
     }
@@ -206,8 +217,5 @@ public class DashBord extends AppCompatActivity {
         startActivity(new Intent(DashBord.this,UserProfile.class));
     }
 
-    @Override
-    protected void onStop() {
-        super.onStop();
-    }
+
 }

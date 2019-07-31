@@ -29,21 +29,20 @@ public class EventsActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     ArrayList<EventModelClass> eventModelClassArrayList;
     MyAdepterOfEvent myAdepterOfEvent;
-
     FirebaseUser user;
+    String key;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_events);
-
-
+        key = getIntent().getStringExtra("bank");
         final FloatingActionButton fab = findViewById(R.id.fab);
         eventModelClassArrayList = new ArrayList<>();
         recyclerView = findViewById(R.id.RecyclerViewForEventId);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        databaseReference= FirebaseDatabase.getInstance().getReference().child("Event");
+        databaseReference= FirebaseDatabase.getInstance().getReference().child("Event").child(key);
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -97,7 +96,10 @@ public class EventsActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(EventsActivity.this, EventUpload.class));
+
+                Intent intent = new Intent(EventsActivity.this,EventUpload.class);
+                intent.putExtra("bank",key);
+                startActivity(intent);
             }
         });
 

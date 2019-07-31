@@ -9,10 +9,14 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class UserMainActivity extends AppCompatActivity {
 
+    String key;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_main);
+
+        key = getIntent().getStringExtra("bank");
     }
 
 
@@ -29,26 +33,44 @@ public class UserMainActivity extends AppCompatActivity {
     public void Logout(View view) {
         FirebaseAuth.getInstance().signOut();
         startActivity(new Intent(this, Login.class));
+
     }
 
-    public void TotalMember(View view) {
-        startActivity(new Intent(UserMainActivity.this, MemberActivity.class));
-    }
 
     public void TotalEvent(View view) {
-        startActivity(new Intent(UserMainActivity.this, EventsActivity.class));
+        Intent intent = new Intent(UserMainActivity.this, EventsActivity.class);
+        intent.putExtra("bank",key);
+        startActivity(intent);
     }
 
-    public void Help(View view) {
-        startActivity(new Intent(UserMainActivity.this, HelpActivityes.class));
+
+    public void annual_Activityes(View view) {
+        Intent intent = new Intent(UserMainActivity.this,HelpActivityes.class);
+        intent.putExtra("bank",key);
+        startActivity(intent);
     }
 
-    public void DonateActivitys(View view) {
-        startActivity(new Intent(UserMainActivity.this, DonateActivity.class));
+    public void donateFund(View view) {
+        Intent intent = new Intent(UserMainActivity.this,FundActivityes.class);
+        intent.putExtra("bank",key);
+        startActivity(intent);
     }
 
-    public void Fant(View view) {
-        startActivity(new Intent(UserMainActivity.this, FundActivityes.class));
+    public void mission(View view) {
+        Intent intent = new Intent(UserMainActivity.this,Mission.class);
+        intent.putExtra("bank",key);
+        startActivity(intent);
     }
 
+    public void vision(View view) {
+        Intent intent = new Intent(UserMainActivity.this,Vision.class);
+        intent.putExtra("bank",key);
+        startActivity(intent);
+    }
+
+    public void socialWork(View view) {
+        Intent intent = new Intent(UserMainActivity.this,HelpActivityes.class);
+        intent.putExtra("bank",key);
+        startActivity(intent);
+    }
 }
