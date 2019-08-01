@@ -17,6 +17,8 @@ public class UploadHelp extends AppCompatActivity {
 
     EditText helpCost,helpDesc;
 
+    String key;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +27,7 @@ public class UploadHelp extends AppCompatActivity {
         helpCost = findViewById(R.id.submitHelpCost);
         helpDesc = findViewById(R.id.submitHelpDesc);
 
-
+        key = getIntent().getStringExtra("bank");
     }
 
     public void submitHelp(View view) {
@@ -35,7 +37,7 @@ public class UploadHelp extends AppCompatActivity {
 
         int intValueForCost = Integer.valueOf(cost);
 
-        databaseReference = FirebaseDatabase.getInstance().getReference("Help").push();
+        databaseReference = FirebaseDatabase.getInstance().getReference("Help").child(key).push();
         HelpModelClass helpModelClass = new HelpModelClass(intValueForCost,desc);
         databaseReference.setValue(helpModelClass);
 

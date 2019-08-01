@@ -28,6 +28,8 @@ import java.io.IOException;
 
 public class EventUpload extends AppCompatActivity {
 
+    private Button button;
+
     private ImageView mImg1, mImg2, mImg3, mImg4;
     private Bitmap bitmap1, bitmap2, bitmap3, bitmap4;
 
@@ -62,6 +64,7 @@ public class EventUpload extends AppCompatActivity {
         mLayout1 = findViewById(R.id.linearLayoutForImage1);
         mLayout2 = findViewById(R.id.linearLayoutForImage2);
         user = FirebaseAuth.getInstance().getCurrentUser();
+        button = findViewById(R.id.buttonForUploadEvent);
 
         upload.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,11 +98,12 @@ public class EventUpload extends AppCompatActivity {
 
                 try {
 
-
                     bitmap1 = MediaStore.Images.Media.getBitmap(getContentResolver(), clipData.getItemAt(0).getUri());
                     bitmap2 = MediaStore.Images.Media.getBitmap(getContentResolver(), clipData.getItemAt(1).getUri());
                     bitmap3 = MediaStore.Images.Media.getBitmap(getContentResolver(), clipData.getItemAt(2).getUri());
                     bitmap4 = MediaStore.Images.Media.getBitmap(getContentResolver(), clipData.getItemAt(3).getUri());
+
+                    button.setEnabled(true);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

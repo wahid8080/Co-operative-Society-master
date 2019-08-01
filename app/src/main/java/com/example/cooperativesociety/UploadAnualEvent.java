@@ -36,18 +36,13 @@ public class UploadAnualEvent extends AppCompatActivity {
         String programLpcation = location.getText().toString();
         String programhistory = history.getText().toString();
 
-        if (typeOfProgram.equals("")&&programLpcation.equals("")&&programhistory.equals(""))
-        {
+
             DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("AnnualProgram").child(key).push();
             AnnualModelClass  annualModelClass = new AnnualModelClass(typeOfProgram,programLpcation,programhistory);
             databaseReference.setValue(annualModelClass);
             startActivity(new Intent(UploadAnualEvent.this,DashBord.class));
             finish();
-        } else
-        {
-            Snackbar.make(view,"Input Full Info", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show();
-        }
+
 
 
     }

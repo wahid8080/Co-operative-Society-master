@@ -32,10 +32,20 @@
                 android:layout_width="120dp"
                 android:layout_height="40dp"
                 android:layout_alignParentRight="true"
-                android:layout_alignParentBottom="true"
                 android:layout_margin="10dp"
                 android:background="@drawable/text_view_backgroiund2"
                 android:text="See More"
+                android:textColor="@color/colorWhite" />
+
+            <Button
+                android:id="@+id/donateForEvent"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="10dp"
+                android:background="@drawable/text_view_backgroiund2"
+                android:text="Donate"
                 android:textColor="@color/colorWhite" />
 
             <TextView

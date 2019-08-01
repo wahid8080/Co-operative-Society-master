@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.cooperativesociety.Model.EventModelClass;
+import com.example.cooperativesociety.MyDonate;
 import com.example.cooperativesociety.R;
 import com.example.cooperativesociety.TotalDataViewOfEvent;
 
@@ -52,7 +53,6 @@ public class MyAdepterOfEvent extends RecyclerView.Adapter<MyAdepterOfEvent.MyVi
         myViewHolder.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Intent intent = new Intent(context, TotalDataViewOfEvent.class);
                 intent.putExtra("name",modelClass.getEventName());
                 intent.putExtra("location",modelClass.getLocation());
@@ -68,6 +68,14 @@ public class MyAdepterOfEvent extends RecyclerView.Adapter<MyAdepterOfEvent.MyVi
             }
         });
 
+        myViewHolder.button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Intent intent = new Intent(context, MyDonate.class);
+
+            }
+        });
+
     }
 
     @Override
@@ -78,7 +86,7 @@ public class MyAdepterOfEvent extends RecyclerView.Adapter<MyAdepterOfEvent.MyVi
     class MyViewHolder extends RecyclerView.ViewHolder
     {
         TextView name,location;
-        Button button;
+        Button button,button2;
         ImageView mImage;
 
         public MyViewHolder(@NonNull View itemView) {
@@ -88,6 +96,7 @@ public class MyAdepterOfEvent extends RecyclerView.Adapter<MyAdepterOfEvent.MyVi
             location = itemView.findViewById(R.id.eventLocationId);
             mImage = itemView.findViewById(R.id.eventImage1Id);
             button = itemView.findViewById(R.id.seeDetailsOnClick);
+            button2 = itemView.findViewById(R.id.donateForEvent);
 
         }
     }

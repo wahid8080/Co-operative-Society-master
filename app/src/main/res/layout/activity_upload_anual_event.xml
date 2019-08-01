@@ -20,7 +20,7 @@
 
         <EditText
             android:layout_below="@id/uploadTypeOfProgram"
-            android:hint="Type Of Program"
+            android:hint="Program Location"
             android:id="@+id/uploadLocationOfProgram"
             android:layout_marginTop="40dp"
             android:layout_width="match_parent"
@@ -34,7 +34,7 @@
             android:layout_below="@id/uploadLocationOfProgram"
             android:layout_alignParentTop="false"
             android:layout_marginTop="40dp"
-            android:hint="Type Of Program" />
+            android:hint="Program History" />
 
 
         <Button

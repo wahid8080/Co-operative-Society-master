@@ -31,17 +31,19 @@ public class HelpActivityes extends AppCompatActivity {
     DatabaseReference databaseReference,databaseReference2;
     FirebaseUser user;
 
-
+    String key;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help_activityes);
         final FloatingActionButton fab = findViewById(R.id.fab);
+
+        key = getIntent().getStringExtra("bank");
         helpModelClassArrayList = new ArrayList<>();
         recyclerView = findViewById(R.id.recyclerViewForHelp);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        databaseReference= FirebaseDatabase.getInstance().getReference().child("Help");
+        databaseReference= FirebaseDatabase.getInstance().getReference().child("Help").child(key);
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -96,7 +98,9 @@ public class HelpActivityes extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(HelpActivityes.this, UploadHelp.class));
+                Intent intent = new Intent(HelpActivityes.this, UploadHelp.class);
+                intent.putExtra("bank",key);
+                startActivity(intent);
             }
         });
     }
