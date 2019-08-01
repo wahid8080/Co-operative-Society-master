@@ -31,17 +31,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void Help(View view) {
-        Intent intent = new Intent(MainActivity.this, HelpActivityes.class);
-        intent.putExtra("bank",key);
-        startActivity(intent);
-    }
-
-    public void DonateActivitys(View view) {
-        Intent intent = new Intent(MainActivity.this, DonateActivity.class);
-        intent.putExtra("bank",key);
-        startActivity(intent);
-    }
 
     public void Fant(View view) {
         Intent intent = new Intent(MainActivity.this, FundActivityes.class);
@@ -51,6 +40,19 @@ public class MainActivity extends AppCompatActivity {
 
     public void Admin(View view) {
         Intent intent = new Intent(MainActivity.this, AdminActivity.class);
+        intent.putExtra("bank",key);
+        startActivity(intent);
+    }
+
+    public void socialWork(View view) {
+        Intent intent = new Intent(MainActivity.this, HelpActivityes.class);
+        intent.putExtra("bank",key);
+        startActivity(intent);
+    }
+
+    public void annualProgram(View view) {
+
+        Intent intent = new Intent(MainActivity.this, AnnualActivityes.class);
         intent.putExtra("bank",key);
         startActivity(intent);
     }

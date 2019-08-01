@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AnnualActivityes"></activity>
+        <activity android:name=".UploadAnualEvent"></activity>
+        <activity android:name=".AnnualActivityes" />
         <activity android:name=".Vision" />
         <activity android:name=".Mission" />
         <activity android:name=".RegistrationForBank" />

@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Base64;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
@@ -35,6 +36,7 @@ public class UploadYourInformation extends AppCompatActivity {
 
     private ImageView mImage;
     private EditText mUserNmae, mPhone, mNID, mDateOfBirth;
+    private Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +49,9 @@ public class UploadYourInformation extends AppCompatActivity {
         mNID = findViewById(R.id.input_NID_Id_SingUp);
         mDateOfBirth = findViewById(R.id.input_dateOfBirth_Id_SingUp);
         user = FirebaseAuth.getInstance().getCurrentUser();
+        button = findViewById(R.id.Singup_button_id_in_singup);
+
+
 
     }
 
@@ -110,6 +115,7 @@ public class UploadYourInformation extends AppCompatActivity {
             try {
                 bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), path);
                 mImage.setImageBitmap(bitmap);
+                button.setEnabled(true);
 
             } catch (IOException e) {
                 e.printStackTrace();
