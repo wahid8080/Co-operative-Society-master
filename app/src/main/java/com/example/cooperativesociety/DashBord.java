@@ -217,5 +217,4 @@ public class DashBord extends AppCompatActivity {
         startActivity(new Intent(DashBord.this,UserProfile.class));
     }
 
-
 }

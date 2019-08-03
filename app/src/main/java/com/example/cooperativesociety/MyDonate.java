@@ -10,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.cooperativesociety.Model.UserInformation;
 import com.example.cooperativesociety.R;
@@ -30,6 +31,7 @@ public class MyDonate extends AppCompatActivity {
     DatabaseReference databaseReference,databaseReference1,databaseReference3;
     FirebaseUser user;
 
+    private String key;
     int total = 0;
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -37,8 +39,12 @@ public class MyDonate extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_donate);
 
+        key = getIntent().getStringExtra("bank");
+
         totalDonate = findViewById(R.id.totalDonate);
         donateNow = findViewById(R.id.donateNow1);
+
+        Toast.makeText(MyDonate.this,""+key,Toast.LENGTH_SHORT).show();
 
         mActionBarToolbar = findViewById(R.id.toolbar_actionbar);
         mActionBarToolbar.setTitle("Your Total Donate");
@@ -77,5 +83,12 @@ public class MyDonate extends AppCompatActivity {
         UserInformation userInformation1 = new UserInformation(finalValue);
         databaseReference3.setValue(userInformation3);
         databaseReference1.setValue(userInformation1);
+
+        Intent intent = new Intent(MyDonate.this,TotalDataViewOfEvent.class);
+        intent.putExtra("bank",key);
+        startActivity(intent);
+        finish();
+
     }
+
 }

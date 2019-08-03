@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UploadAnualEvent"></activity>
+        <activity android:name=".EventDonate"></activity>
+        <activity android:name=".UploadAnualEvent" />
         <activity android:name=".AnnualActivityes" />
         <activity android:name=".Vision" />
         <activity android:name=".Mission" />
@@ -28,7 +29,6 @@
         <activity android:name=".Payment" />
         <activity android:name=".DonateActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".DoYouWantToDonate" />
         <activity android:name=".YourBalance" />
         <activity android:name=".MemberActivity" />
         <activity android:name=".FundActivityes" />

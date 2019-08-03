@@ -13,6 +13,10 @@ public class PaymentModel {
         this.referance = referance;
     }
 
+    public PaymentModel(int balance) {
+        this.balance = balance;
+    }
+
     public int getBalance() {
         return balance;
     }

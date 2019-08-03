@@ -15,8 +15,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.cooperativesociety.EventDonate;
 import com.example.cooperativesociety.Model.EventModelClass;
-import com.example.cooperativesociety.MyDonate;
 import com.example.cooperativesociety.R;
 import com.example.cooperativesociety.TotalDataViewOfEvent;
 
@@ -28,10 +28,13 @@ public class MyAdepterOfEvent extends RecyclerView.Adapter<MyAdepterOfEvent.MyVi
     private Context context;
     private ArrayList<EventModelClass> eventModelClassArrayList;
     private Bitmap bitmap;
+    private String key;
 
-    public MyAdepterOfEvent(Context context, ArrayList<EventModelClass> eventModelClassArrayList) {
+
+    public MyAdepterOfEvent(Context context, ArrayList<EventModelClass> eventModelClassArrayList,String key) {
         this.context = context;
         this.eventModelClassArrayList = eventModelClassArrayList;
+        this.key = key;
     }
 
 
@@ -63,7 +66,6 @@ public class MyAdepterOfEvent extends RecyclerView.Adapter<MyAdepterOfEvent.MyVi
                 intent.putExtra("img3",modelClass.getImage3());
                 intent.putExtra("img4",modelClass.getImage4());
                 context.startActivity(intent);
-
                 Toast.makeText(context,modelClass.getEventName(),Toast.LENGTH_SHORT).show();
             }
         });
@@ -71,7 +73,10 @@ public class MyAdepterOfEvent extends RecyclerView.Adapter<MyAdepterOfEvent.MyVi
         myViewHolder.button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent intent = new Intent(context, MyDonate.class);
+                Intent intent = new Intent(context, EventDonate.class);
+                intent.putExtra("bank",key);
+                intent.putExtra("name",modelClass.getEventName());
+                context.startActivity(intent);
 
             }
         });

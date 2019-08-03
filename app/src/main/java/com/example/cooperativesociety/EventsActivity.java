@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.cooperativesociety.Adapter.MyAdepterOfEvent;
 import com.example.cooperativesociety.Model.EventModelClass;
@@ -51,9 +52,10 @@ public class EventsActivity extends AppCompatActivity {
 
                     EventModelClass m = dataSnapshot1.getValue(EventModelClass.class);
                     eventModelClassArrayList.add(m);
+
                 }
 
-                myAdepterOfEvent = new MyAdepterOfEvent(EventsActivity.this,eventModelClassArrayList);
+                myAdepterOfEvent = new MyAdepterOfEvent(EventsActivity.this,eventModelClassArrayList,key);
                 recyclerView.setAdapter(myAdepterOfEvent);
 
             }
@@ -63,6 +65,8 @@ public class EventsActivity extends AppCompatActivity {
 
             }
         });
+
+
 
 
         try {
@@ -105,11 +109,4 @@ public class EventsActivity extends AppCompatActivity {
 
     }
 
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-
-        finish();
-    }
 }
