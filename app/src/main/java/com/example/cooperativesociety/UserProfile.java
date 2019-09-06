@@ -56,7 +56,7 @@ public class UserProfile extends AppCompatActivity {
                     mEmail.setText("Email : " + userInformation.getEmail());
                     mPhone.setText("Cell Phone: " + userInformation.getPhone());
                     mNID.setText("N ID : " + userInformation.getNid());
-                    mAdderss.setText("Address :  : " + userInformation.getDateOfBirth());
+                    mAdderss.setText("Date of birth :  : " + userInformation.getDateOfBirth());
                     Bitmap bm = StringToBitMap(userInformation.getImageToString());
                     mUser_profile_photo.setImageBitmap(bm);
                     Bitmap bm2 = StringToBitMap(userInformation.getImageToString());

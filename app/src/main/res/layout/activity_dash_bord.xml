@@ -29,7 +29,7 @@
                android:id="@+id/coverPicIdDashBord"
                android:layout_width="match_parent"
                android:layout_height="200dp"
-               android:src="@drawable/inside_room"
+               android:src="@drawable/cooperativeiimage"
                android:scaleType="centerCrop"/>
 
            <de.hdodenhof.circleimageview.CircleImageView

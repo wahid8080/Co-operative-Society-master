@@ -24,12 +24,11 @@
 
 
                 <ImageView
-                    android:background="#FD4D8E"
                     android:layout_centerHorizontal="true"
                     android:id="@+id/imageViewId"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_marginBottom="60dp"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_marginBottom="30dp"
                     android:src="@drawable/logo2" />
 
 

@@ -12,30 +12,29 @@
         android:layout_height="match_parent">
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="3dp">
+            android:layout_height="match_parent">
 
             <RelativeLayout
-                android:layout_margin="10dp"
+                android:layout_marginBottom="20dp"
                 android:id="@+id/dashbordId"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:background="#6874AD"
+                android:layout_height="250dp"
+                android:background="#752E7D"
                 android:gravity="left">
 
                 <ImageView
-                    android:layout_margin="20dp"
+                    android:layout_marginLeft="20dp"
                     android:id="@+id/dashbordLogo"
                     android:layout_width="175dp"
                     android:layout_height="175dp"
                     android:src="@drawable/logo2"/>
 
                 <TextView
-                    android:layout_marginTop="40dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
                     android:layout_below="@id/dashbordLogo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
                     android:text="Co-operative Organization"
                     android:textColor="#FCFCFC"
                     android:textSize="24dp"
@@ -215,7 +214,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginTop="15dp"
-                        android:background="@color/colorPrimaryDark"
+                        android:background="#1E7221"
                         android:padding="8dp"
                         android:text="Fund"
                         android:textAlignment="center"

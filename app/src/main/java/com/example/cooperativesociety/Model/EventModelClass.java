@@ -2,7 +2,7 @@ package com.example.cooperativesociety.Model;
 
 public class EventModelClass {
     private String image1,image2,image3,image4,eventName,eventDescription,location;
-    private int eventCost,totalEventCost;
+    private int eventCost,totalEventCost,totalDonate;
 
     public EventModelClass() {
     }
@@ -17,6 +17,7 @@ public class EventModelClass {
         this.eventDescription = eventDescription;
         this.location = location;
     }
+
 
     public EventModelClass(int totalEventCost) {
         this.totalEventCost = totalEventCost;
@@ -52,6 +53,10 @@ public class EventModelClass {
 
     public String getLocation() {
         return location;
+    }
+
+    public int getTotalDonate() {
+        return totalDonate;
     }
 
     public int getTotalEventCost() {
@@ -92,5 +97,9 @@ public class EventModelClass {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public void setTotalDonate(int totalDonate) {
+        this.totalDonate = totalDonate;
     }
 }

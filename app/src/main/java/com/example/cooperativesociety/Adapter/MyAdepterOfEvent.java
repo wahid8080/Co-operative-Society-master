@@ -50,6 +50,7 @@ public class MyAdepterOfEvent extends RecyclerView.Adapter<MyAdepterOfEvent.MyVi
         final EventModelClass modelClass = eventModelClassArrayList.get(i);
         myViewHolder.name.setText("Event Name: "+modelClass.getEventName());
         myViewHolder.location.setText("Location: "+modelClass.getLocation());
+        myViewHolder.cost.setText("Total Donate : "+modelClass.getTotalDonate());
         bitmap = StringToBitMap(modelClass.getImage1());
         myViewHolder.mImage.setImageBitmap(bitmap);
 
@@ -90,7 +91,7 @@ public class MyAdepterOfEvent extends RecyclerView.Adapter<MyAdepterOfEvent.MyVi
 
     class MyViewHolder extends RecyclerView.ViewHolder
     {
-        TextView name,location;
+        TextView name,location,cost;
         Button button,button2;
         ImageView mImage;
 
@@ -102,6 +103,7 @@ public class MyAdepterOfEvent extends RecyclerView.Adapter<MyAdepterOfEvent.MyVi
             mImage = itemView.findViewById(R.id.eventImage1Id);
             button = itemView.findViewById(R.id.seeDetailsOnClick);
             button2 = itemView.findViewById(R.id.donateForEvent);
+            cost = itemView.findViewById(R.id.totalDonateOfEvent);
 
         }
     }

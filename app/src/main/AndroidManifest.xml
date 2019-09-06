@@ -29,7 +29,6 @@
         <activity android:name=".Payment" />
         <activity android:name=".DonateActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".YourBalance" />
         <activity android:name=".MemberActivity" />
         <activity android:name=".FundActivityes" />
         <activity android:name=".HelpActivityes" />

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -45,7 +46,7 @@ public class UserMainActivity extends AppCompatActivity {
 
 
     public void annual_Activityes(View view) {
-        Intent intent = new Intent(UserMainActivity.this,HelpActivityes.class);
+        Intent intent = new Intent(UserMainActivity.this,AnnualActivityes.class);
         intent.putExtra("bank",key);
         startActivity(intent);
     }
@@ -73,4 +74,5 @@ public class UserMainActivity extends AppCompatActivity {
         intent.putExtra("bank",key);
         startActivity(intent);
     }
+
 }

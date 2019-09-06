@@ -10,6 +10,7 @@ import android.util.Base64;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import com.example.cooperativesociety.Adapter.ExampleDailog;
@@ -29,6 +30,7 @@ public class DashBord extends AppCompatActivity {
     private FirebaseUser user;
     private TextView userName;
     private ImageView userProfile,userCover,dashbordImg;
+    public long backPressedTime;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -215,6 +217,20 @@ public class DashBord extends AppCompatActivity {
 
     public void profileDashbord(View view) {
         startActivity(new Intent(DashBord.this,UserProfile.class));
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (backPressedTime + 2000>System.currentTimeMillis())
+        {
+            super.onBackPressed();
+            return;
+        } else
+        {
+            Toast.makeText(DashBord.this,"Press back again to Exit",Toast.LENGTH_SHORT).show();
+        }
+
+        backPressedTime = System.currentTimeMillis();
     }
 
 }

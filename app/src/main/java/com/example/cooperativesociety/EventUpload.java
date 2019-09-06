@@ -18,6 +18,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.cooperativesociety.Model.EventModelClass;
+import com.example.cooperativesociety.Model.HelpModelClass;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -38,7 +39,7 @@ public class EventUpload extends AppCompatActivity {
     private LinearLayout mLayout1, mLayout2;
     private static final int CODE_MULTIPLE_IMG_GALLERY = 2;
 
-    private DatabaseReference databaseReference;
+    private DatabaseReference databaseReference,databaseReference2;
 
     private FirebaseUser user;
 
@@ -134,8 +135,11 @@ public class EventUpload extends AppCompatActivity {
         int cast1 = Integer.valueOf(cost);
 
         databaseReference = FirebaseDatabase.getInstance().getReference("Event").child(key).push();
+        databaseReference2 = FirebaseDatabase.getInstance().getReference("TotalCost").child(key).push();
         EventModelClass modelClass = new EventModelClass(m1, m2, m3, m4, name, cast1, desc, locat);
+        HelpModelClass modelClass1 = new HelpModelClass(cast1);
         databaseReference.setValue(modelClass);
+        databaseReference2.setValue(modelClass1);
         Toast.makeText(EventUpload.this, "Event Submit Successful", Toast.LENGTH_SHORT).show();
         startActivity(new Intent(EventUpload.this, DashBord.class));
 

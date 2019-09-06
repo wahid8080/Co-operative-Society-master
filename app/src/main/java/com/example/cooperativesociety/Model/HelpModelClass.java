@@ -12,6 +12,7 @@ public class HelpModelClass  {
         this.helpDesc = helpDesc;
     }
 
+
     public HelpModelClass(int totalHelpCost) {
         this.totalHelpCost = totalHelpCost;
     }

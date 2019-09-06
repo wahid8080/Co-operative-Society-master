@@ -99,7 +99,7 @@ public class UploadYourInformation extends AppCompatActivity {
 
     public String imageToString(Bitmap bitmap) {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 40, byteArrayOutputStream);
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
         byte[] imgbyte = byteArrayOutputStream.toByteArray();
         return Base64.encodeToString(imgbyte, Base64.DEFAULT);
     }

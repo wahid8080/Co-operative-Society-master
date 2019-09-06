@@ -41,15 +41,28 @@
                 android:id="@+id/donateForEvent"
                 android:layout_width="120dp"
                 android:layout_height="40dp"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentBottom="true"
-                android:layout_margin="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:background="@drawable/text_view_backgroiund2"
                 android:text="Donate"
                 android:textColor="@color/colorWhite" />
 
+
+
             <TextView
                 android:id="@+id/eventNameId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/totalDonateOfEvent"
+                android:layout_margin="5dp"
+                android:text="Total Cost : "
+                android:textColor="@color/colorWhite"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/totalDonateOfEvent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_above="@id/eventLocationId"

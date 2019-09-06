@@ -16,12 +16,10 @@ import com.google.firebase.database.ValueEventListener;
 
 public class FundActivityes extends AppCompatActivity {
 
-    TextView totalDonate, totalDebit, totalCash, totalEventcost, totalHelpCost;
+    TextView totalDonate, totalEventcost, totalHelpCost;
+    DatabaseReference databaseReference,databaseReference3, databaseReference4;
 
-    DatabaseReference databaseReference,
-            databaseReference3, databaseReference4;
-
-
+    public String key;
     public static int totalHelp;
 
     @Override
@@ -29,20 +27,20 @@ public class FundActivityes extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fund_activityes);
 
-//        totalCash = findViewById(R.id.totalCash);
-//        totalDebit = findViewById(R.id.totalDebit);
+        key = getIntent().getStringExtra("bank");
+
         totalDonate = findViewById(R.id.totalDonate);
         totalEventcost = findViewById(R.id.totalEventCost);
         totalHelpCost = findViewById(R.id.totalHelpCost);
 
-        databaseReference = FirebaseDatabase.getInstance().getReference("Fund").child("Balance");
+        databaseReference = FirebaseDatabase.getInstance().getReference("TotalCost").child(key);
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 int total = 0;
                 for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
-                    UserInformation userInformation = dataSnapshot1.getValue(UserInformation.class);
-                    total = total + userInformation.getBalance();
+                    HelpModelClass userInformation = dataSnapshot1.getValue(HelpModelClass.class);
+                    total = total + userInformation.getTotalHelpCost();
                     totalDonate.setText("Total Donate : " + String.valueOf(total));
 
 
@@ -56,7 +54,7 @@ public class FundActivityes extends AppCompatActivity {
             }
         });
 
-        databaseReference3 = FirebaseDatabase.getInstance().getReference("Event");
+        databaseReference3 = FirebaseDatabase.getInstance().getReference("Event").child(key);
         databaseReference3.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -78,7 +76,7 @@ public class FundActivityes extends AppCompatActivity {
             }
         });
 
-        databaseReference4 = FirebaseDatabase.getInstance().getReference("Help");
+        databaseReference4 = FirebaseDatabase.getInstance().getReference("Help").child(key);
         databaseReference4.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

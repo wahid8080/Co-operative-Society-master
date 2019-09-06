@@ -13,7 +13,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class UploadHelp extends AppCompatActivity {
 
-    DatabaseReference databaseReference;
+    DatabaseReference databaseReference,databaseReference2;
 
     EditText helpCost,helpDesc;
 
@@ -38,12 +38,15 @@ public class UploadHelp extends AppCompatActivity {
         int intValueForCost = Integer.valueOf(cost);
 
         databaseReference = FirebaseDatabase.getInstance().getReference("Help").child(key).push();
+        databaseReference2 = FirebaseDatabase.getInstance().getReference("TotalCost").child(key).push();
         HelpModelClass helpModelClass = new HelpModelClass(intValueForCost,desc);
+        HelpModelClass helpModelClass1 = new HelpModelClass(intValueForCost);
         databaseReference.setValue(helpModelClass);
+        databaseReference2.setValue(helpModelClass1);
 
         Toast.makeText(UploadHelp.this, "Help Submit Successful", Toast.LENGTH_SHORT).show();
-
-        startActivity(new Intent(UploadHelp.this,HelpActivityes.class));
+        startActivity(new Intent(UploadHelp.this,DashBord.class));
+        finish();
 
     }
 }

@@ -10,19 +10,11 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
 
-    <string name="alaminEmail">Email : hridoyalamin505@gmail.com</string>
-    <string name="alaminId">ID : 162 15 8146</string>
-    <string name="alaminAbout">The criteria for being a person are designed to capture those attributes which are the subject of our most humane concern with ourselves and the source
-        of what we regard as most important and most problematical in our lives.</string>
+    <string name="our_vision">We share a vision of people working together cooperatively and responsibly to achieve their social
+        and economic wellbeing through organizations they own and control.</string>
 
-    <string name="sujonEmail">sujanchowdhury119@gmail.com</string>
-    <string name="sujonId">ID : 162 15 8114</string>
-    <string name="sujonAbout">The criteria for being a person are designed to capture those attributes which are the subject of our most humane concern with ourselves and the source
-        of what we regard as most important and most problematical in our lives.</string>
+    <string name="our_mission">Focusing on our vision, our Mission is:
 
-    <string name="saminEmail">Shamimrahman511@gmail.com</string>
-    <string name="saminId">ID : 162 15 8120</string>
-    <string name="saminAbout">The criteria for being a person are designed to capture those attributes which are the subject of our most humane concern with ourselves and the source
-        of what we regard as most important and most problematical in our lives.</string>
-    <string name="title_activity_main2">Main2Activity</string>
+“To add value to savings, ensure easy credits and improve the well-being of people and the community through
+        integrated co-operative enterprises that are profitable, secure and member-centred”.These shared values represent the cords that bind us together as a co-operative people.</string>
 </resources>
