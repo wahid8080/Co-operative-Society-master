@@ -6,7 +6,14 @@ public class UserInformation {
 
     private int balance;
 
-    public UserInformation(String email, String nid, String phone, String username, String imageToString, String dateOfBirth,String user) {
+
+    public UserInformation(String email, String phone, String imageToString) {
+        this.email = email;
+        this.phone = phone;
+        this.imageToString = imageToString;
+    }
+
+    public UserInformation(String email, String nid, String phone, String username, String imageToString, String dateOfBirth, String user) {
         this.email = email;
         this.nid = nid;
         this.phone = phone;

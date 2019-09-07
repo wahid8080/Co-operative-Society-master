@@ -82,8 +82,6 @@ public class AdminActivity extends AppCompatActivity {
         intent.putExtra("img",R.drawable.alamin);
         startActivity(intent);
 
-        Toast.makeText(AdminActivity.this,R.string.alaminId,Toast.LENGTH_SHORT).show();
-
     }
 
     @Override

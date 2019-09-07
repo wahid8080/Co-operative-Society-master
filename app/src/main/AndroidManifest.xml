@@ -27,7 +27,6 @@
         <activity android:name=".TotalDataViewOfEvent" />
         <activity android:name=".EventUpload" />
         <activity android:name=".Payment" />
-        <activity android:name=".DonateActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".MemberActivity" />
         <activity android:name=".FundActivityes" />
@@ -37,7 +36,6 @@
         <activity android:name=".UserProfile" />
         <activity android:name=".UploadYourInformation" />
         <activity android:name=".Registration" />
-        <activity android:name=".MyDonate" />
         <activity android:name=".WelcomeScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

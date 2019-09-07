@@ -27,7 +27,7 @@ public class UserMainActivity extends AppCompatActivity {
 
     public void Donate(View view) {
 
-        startActivity(new Intent(this, MyDonate.class));
+        startActivity(new Intent(this, Payment.class));
 
     }
 

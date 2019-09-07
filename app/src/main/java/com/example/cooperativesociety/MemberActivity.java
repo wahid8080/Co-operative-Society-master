@@ -24,6 +24,8 @@ public class MemberActivity extends AppCompatActivity {
     private RecyclerView memberListView;
     private FirebaseUser user;
 
+    public String key;
+
     private ArrayList<MembersModelClass> membersList;
     private MyAdepter myAdepter;
 
@@ -34,7 +36,9 @@ public class MemberActivity extends AppCompatActivity {
 
         user = FirebaseAuth.getInstance().getCurrentUser();
 
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("User");
+        key = getIntent().getStringExtra("bank");
+
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("BankUser").child(key);
 
         membersList = new ArrayList<>();
         myAdepter = new MyAdepter(MemberActivity.this,membersList);

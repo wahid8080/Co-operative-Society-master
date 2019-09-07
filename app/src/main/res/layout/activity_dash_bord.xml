@@ -20,7 +20,7 @@
            <ImageView
                android:id="@+id/dashbordImage"
                android:visibility="gone"
-               android:src="@drawable/inside_room"
+               android:src="@drawable/cooperativeiimage"
                android:scaleType="centerCrop"
                android:layout_width="match_parent"
                android:layout_height="260dp" />

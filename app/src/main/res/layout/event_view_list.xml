@@ -21,11 +21,11 @@
             android:layout_height="300dp">
 
             <ImageView
+                android:scaleType="centerCrop"
                 android:id="@+id/eventImage1Id"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                android:src="@drawable/inside_room" />
+                android:src="@drawable/loding" />
 
             <Button
                 android:id="@+id/seeDetailsOnClick"
@@ -57,7 +57,7 @@
                 android:layout_height="wrap_content"
                 android:layout_above="@id/totalDonateOfEvent"
                 android:layout_margin="5dp"
-                android:text="Total Cost : "
+                android:text="Event Name : "
                 android:textColor="@color/colorWhite"
                 android:textSize="18dp" />
 
@@ -67,7 +67,7 @@
                 android:layout_height="wrap_content"
                 android:layout_above="@id/eventLocationId"
                 android:layout_margin="5dp"
-                android:text="Event Name : "
+                android:text="Event Cost : "
                 android:textColor="@color/colorWhite"
                 android:textSize="18dp" />
 

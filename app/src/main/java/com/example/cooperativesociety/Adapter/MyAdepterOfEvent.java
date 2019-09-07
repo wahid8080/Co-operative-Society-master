@@ -45,12 +45,12 @@ public class MyAdepterOfEvent extends RecyclerView.Adapter<MyAdepterOfEvent.MyVi
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, final int i) {
+    public void onBindViewHolder(@NonNull final MyViewHolder myViewHolder, final int i) {
 
         final EventModelClass modelClass = eventModelClassArrayList.get(i);
         myViewHolder.name.setText("Event Name: "+modelClass.getEventName());
         myViewHolder.location.setText("Location: "+modelClass.getLocation());
-        myViewHolder.cost.setText("Total Donate : "+modelClass.getTotalDonate());
+        myViewHolder.cost.setText("Total Donate : "+modelClass.getEventCost());
         bitmap = StringToBitMap(modelClass.getImage1());
         myViewHolder.mImage.setImageBitmap(bitmap);
 
@@ -60,7 +60,7 @@ public class MyAdepterOfEvent extends RecyclerView.Adapter<MyAdepterOfEvent.MyVi
                 Intent intent = new Intent(context, TotalDataViewOfEvent.class);
                 intent.putExtra("name",modelClass.getEventName());
                 intent.putExtra("location",modelClass.getLocation());
-                intent.putExtra("cost",modelClass.getEventCost());
+                intent.putExtra("cost",myViewHolder.cost.getText().toString());
                 intent.putExtra("description",modelClass.getEventDescription());
                 intent.putExtra("img1",modelClass.getImage1());
                 intent.putExtra("img2",modelClass.getImage2());
